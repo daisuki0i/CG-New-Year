@@ -12,7 +12,7 @@ public class NewYear extends JPanel {
         JFrame f = new JFrame();
         f.add(n);
         f.setTitle("NewYear");
-        f.setSize(700, 700);
+        f.setSize(600,600);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
         f.setLocationRelativeTo(null); // หน้าต่างอยู่ตรงกลาง
@@ -20,13 +20,13 @@ public class NewYear extends JPanel {
 
     public void paintComponent(Graphics g) {
         g.setColor(BACKGROUND);
-        drawRectangle(g, 0, 0, 700, 700);
+        drawRectangle(g, 0, 0, 600, 600);
 
         g.setColor(CAMEL);
-        drawRectangle(g, 0, 500, 700, 700);
+        drawRectangle(g, 0, 500, 600, 600);
 
         g.setColor(MIDNIGHT_BLUE);
-        drawRectangle(g, 500, 300, 700, 500);
+        drawRectangle(g, 500, 300, 600, 300);
     }
 
     private void plot(Graphics g, int x, int y) {
