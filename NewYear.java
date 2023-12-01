@@ -23,10 +23,14 @@ public class NewYear extends JPanel {
         drawRectangle(g, 0, 0, 600, 600);
 
         g.setColor(CAMEL);
-        drawRectangle(g, 0, 500, 600, 600);
+        drawRectangle(g, 0, 425, 600, 600);
 
-        g.setColor(MIDNIGHT_BLUE);
-        drawRectangle(g, 500, 300, 600, 300);
+        g.setColor(Color.WHITE);;
+        drawRectangle(g, 400, 50, 600, 250);
+        drawRectangle(g, 390, 250, 600, 280);
+        drawRectangle(g, 410, 280, 600, 290);
+
+        
     }
 
     private void plot(Graphics g, int x, int y) {
