@@ -14,6 +14,8 @@ class MyColor extends Color {
 }
 
 public class NewYear extends JPanel {
+    final int LINE_WIDTH = 2;
+
     public static void main(String[] args) {
         NewYear n = new NewYear();
 
@@ -68,10 +70,10 @@ public class NewYear extends JPanel {
     }
 
     private void drawHorizontalLine(Graphics g, int x1, int y1, int len) {
-        drawRectangle(g, x1, y1, x1 + len, y1 + 2, MyColor.LINE);
+        drawRectangle(g, x1, y1, x1 + len, y1 + LINE_WIDTH, MyColor.LINE);
     }
 
     private void drawVerticalLine(Graphics g, int x1, int y1, int len) {
-        drawRectangle(g, x1, y1, x1 + 2, y1 + len, MyColor.LINE);
+        drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, MyColor.LINE);
     }
 }
