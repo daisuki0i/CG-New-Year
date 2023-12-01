@@ -34,12 +34,9 @@ public class NewYear extends JPanel {
     }
 
     private void drawRectangle(Graphics g, int x1, int y1, int x2, int y2) {
-        int x = x1;
-        int y = y1;
-
-        for (int i = x; i < x2; i++) {
-            for (int j = y; j < y2; j++) {
-                plot(g, i, j);
+        for (int x = x1; x < x2; x++) {
+            for (int y = y1; y < y2; y++) {
+                plot(g, x, y);
             }
         }
     }
