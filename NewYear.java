@@ -6,11 +6,14 @@ class MyColor extends Color {
         super(r, g, b);
     }
 
-    public static final Color WINDOW = new Color(236, 186, 88);
-    public static final Color BACKGROUND = new Color(235, 223, 171);
-    public static final Color TABLE = new Color(87, 66, 65);
+    public static final Color BACKGROUND = new Color(226, 153, 142);
+    public static final Color HOUSE_WALL = new Color(188, 100, 92);
+    public static final Color WINDOW = new Color(221, 167, 99);
+    public static final Color TABLE = new Color(96, 99, 85);
     public static final Color NIGHTTIME = new Color(19, 84, 122);
     public static final Color LINE = BLACK;
+
+    
 }
 
 public class NewYear extends JPanel {
@@ -30,6 +33,14 @@ public class NewYear extends JPanel {
 
     public void paintComponent(Graphics g) {
         drawRectangle(g, 0, 0, 600, 600, MyColor.BACKGROUND);
+
+        // ลายผนัง
+        int lineSpacing = 60;
+        for (int x = 40; x <= 600; x += lineSpacing) {
+            drawVerticalLine(g, x, 0, 600, MyColor.HOUSE_WALL);
+        }
+
+
 
         drawRectangle(g, 0, 425, 600, 600, MyColor.TABLE); // โต๊ะ
         drawRectangle(g, 0, 423, 600, 425, MyColor.BLACK); // ขอบโต๊ะ
@@ -75,5 +86,11 @@ public class NewYear extends JPanel {
 
     private void drawVerticalLine(Graphics g, int x1, int y1, int len) {
         drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, MyColor.LINE);
+        
+    }
+
+        private void drawVerticalLine(Graphics g, int x1, int y1, int len, Color color) {
+        drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, color);
+        
     }
 }
