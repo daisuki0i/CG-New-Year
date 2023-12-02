@@ -13,7 +13,6 @@ class MyColor extends Color {
     public static final Color NIGHTTIME = new Color(19, 84, 122);
     public static final Color LINE = BLACK;
 
-    
 }
 
 public class NewYear extends JPanel {
@@ -39,8 +38,6 @@ public class NewYear extends JPanel {
         for (int x = 40; x <= 600; x += lineSpacing) {
             drawVerticalLine(g, x, 0, 600, MyColor.HOUSE_WALL);
         }
-
-
 
         drawRectangle(g, 0, 425, 600, 600, MyColor.TABLE); // โต๊ะ
         drawRectangle(g, 0, 423, 600, 425, MyColor.BLACK); // ขอบโต๊ะ
@@ -86,11 +83,18 @@ public class NewYear extends JPanel {
 
     private void drawVerticalLine(Graphics g, int x1, int y1, int len) {
         drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, MyColor.LINE);
-        
     }
 
-        private void drawVerticalLine(Graphics g, int x1, int y1, int len, Color color) {
+    private void drawVerticalLine(Graphics g, int x1, int y1, int len, Color color) {
         drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, color);
-        
     }
+
+    private void drawLine(Graphics g, int x1, int y1, int x2, int y2) {
+        g.drawLine(x1, y1, x2, y2);
+    }
+
+    private void drawArc(Graphics g, int x, int y, int width, int height, int startAngle, int arcAngle) {
+        g.drawArc(x, y, width, height, startAngle, arcAngle);
+    }
+
 }
