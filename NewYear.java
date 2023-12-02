@@ -6,11 +6,20 @@ class MyColor extends Color {
         super(r, g, b);
     }
 
+    public MyColor(String hex) {
+        super(Integer.parseInt(hex.substring(1, 3), 16),
+                Integer.parseInt(hex.substring(3, 5), 16),
+                Integer.parseInt(hex.substring(5, 7), 16));
+    }
+
     public static final Color BACKGROUND = new Color(226, 153, 142);
     public static final Color HOUSE_WALL = new Color(188, 100, 92);
     public static final Color WINDOW = new Color(221, 167, 99);
     public static final Color TABLE = new Color(96, 99, 85);
     public static final Color NIGHTTIME = new Color(19, 84, 122);
+    public static final Color MONITOR_BORDER = new Color(172,177,183);
+    public static final Color SHADOW_MONITOR_BORDER = new Color(123,126,133);
+
     public static final Color LINE = BLACK;
 
 }
@@ -42,25 +51,39 @@ public class NewYear extends JPanel {
         drawRectangle(g, 0, 425, 600, 600, MyColor.TABLE); // โต๊ะ
         drawRectangle(g, 0, 423, 600, 425, MyColor.BLACK); // ขอบโต๊ะ
 
-        drawRectangle(g, 400, 50, 600, 250, MyColor.WINDOW); // หน้าต่าง
-        drawRectangle(g, 390, 250, 600, 280, MyColor.WINDOW);
-        drawRectangle(g, 410, 280, 600, 290, MyColor.WINDOW);
+        // กรอบหน้าต่างสีขาว
+        drawRectangle(g, 400, 50, 600, 280, MyColor.WINDOW); 
+        drawRectangle(g, 390, 280, 600, 310, MyColor.WINDOW);
+        drawRectangle(g, 410, 310, 600, 330, MyColor.WINDOW);
 
-        drawHorizontalLine(g, 400, 49, 200); // ขอบหน้าต่างแนวนอน
-        drawHorizontalLine(g, 390, 250, 210);
+        // ขอบหน้าต่างแนวนอน
+        drawHorizontalLine(g, 400, 49, 200); 
         drawHorizontalLine(g, 390, 280, 210);
-        drawHorizontalLine(g, 410, 290, 190);
+        drawHorizontalLine(g, 390, 310, 210);
+        drawHorizontalLine(g, 410, 330, 190);
 
-        drawVerticalLine(g, 400, 49, 201); // ขอบหน้าต่างแนวตั้ง
-        drawVerticalLine(g, 390, 250, 31);
-        drawVerticalLine(g, 410, 280, 11);
+        // ขอบหน้าต่างแนวตั้ง
+        drawVerticalLine(g, 400, 49, 231); 
+        drawVerticalLine(g, 390, 280, 31);
+        drawVerticalLine(g, 410, 310, 21);
 
-        drawRectangle(g, 420, 70, 600, 235, MyColor.NIGHTTIME);
+        // ท้องฟ้า
+        drawRectangle(g, 420, 70, 600, 265, MyColor.NIGHTTIME);
 
+        // กรอบแนวนอนท้องฟ้า
         drawHorizontalLine(g, 420, 70, 180);
-        drawHorizontalLine(g, 420, 235, 180);
+        drawHorizontalLine(g, 420, 265, 180);
 
-        drawVerticalLine(g, 419, 70, 167);
+        // กรอบแนวตั้งท้องฟ้า
+        drawVerticalLine(g, 419, 70, 197);
+
+        // Monitor Border
+        drawRectangle(g, 0, 100, 340, 380, MyColor.MONITOR_BORDER);
+
+        // Shadow Monitor Border
+        // drawRectangle(g, 0, 100, 340, 380, MyColor.SHADOW_MONITOR_BORDER);
+
+
 
     }
 
