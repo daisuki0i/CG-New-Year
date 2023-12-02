@@ -6,19 +6,13 @@ class MyColor extends Color {
         super(r, g, b);
     }
 
-    public MyColor(String hex) {
-        super(Integer.parseInt(hex.substring(1, 3), 16),
-                Integer.parseInt(hex.substring(3, 5), 16),
-                Integer.parseInt(hex.substring(5, 7), 16));
-    }
-
-    public static final Color BACKGROUND = new Color(226, 153, 142);
-    public static final Color HOUSE_WALL = new Color(188, 100, 92);
-    public static final Color WINDOW = new Color(221, 167, 99);
-    public static final Color TABLE = new Color(96, 99, 85);
-    public static final Color NIGHTTIME = new Color(19, 84, 122);
-    public static final Color MONITOR_BORDER = new Color(172,177,183);
-    public static final Color SHADOW_MONITOR_BORDER = new Color(123,126,133);
+    public static final Color BACKGROUND = Color.decode("#E2998E");
+    public static final Color HOUSE_WALL = Color.decode("#BC645C");
+    public static final Color WINDOW = Color.decode("#DDA763");
+    public static final Color TABLE = Color.decode("#606355");
+    public static final Color NIGHTTIME = Color.decode("#13547A");
+    public static final Color MONITOR_BORDER = Color.decode("#ACB1B7");
+    public static final Color SHADOW_MONITOR_BORDER = Color.decode("#7B7D83");
 
     public static final Color LINE = BLACK;
 
@@ -43,8 +37,8 @@ public class NewYear extends JPanel {
         drawRectangle(g, 0, 0, 600, 600, MyColor.BACKGROUND);
 
         // ลายผนัง
-        int lineSpacing = 60;
-        for (int x = 40; x <= 600; x += lineSpacing) {
+        int lineSpacing = 55;
+        for (int x = 35; x < 600; x += lineSpacing) {
             drawVerticalLine(g, x, 0, 600, MyColor.HOUSE_WALL);
         }
 
@@ -80,11 +74,16 @@ public class NewYear extends JPanel {
         // Monitor Border
         drawRectangle(g, 0, 100, 340, 380, MyColor.MONITOR_BORDER);
 
+        // กรอบแนวนอน Monitor Border
+        drawHorizontalLine(g, 0, 100, 340);
+        drawHorizontalLine(g, 0, 380, 340);
+
+        // กรอบแนวตั้ง Monitor Border
+         drawVerticalLine(g, 340, 100, 281);
+
         // Shadow Monitor Border
-        // drawRectangle(g, 0, 100, 340, 380, MyColor.SHADOW_MONITOR_BORDER);
-
-
-
+        drawRectangle(g, 0, 110, 330, 115, MyColor.SHADOW_MONITOR_BORDER);
+        drawRectangle(g, 0, 365, 330, 370, MyColor.SHADOW_MONITOR_BORDER);
     }
 
     private void plot(Graphics g, int x, int y) {
