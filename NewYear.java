@@ -13,10 +13,10 @@ class MyColor extends Color {
     public static final Color NIGHTTIME = Color.decode("#13547A");
     public static final Color MONITOR_BORDER = Color.decode("#ACB1B7");
     public static final Color SHADOW_MONITOR_BORDER = Color.decode("#7B7D83");
-    public static final Color COMPUTER_MONITOR = Color.decode("#DFD7AF");
+    public static final Color COMPUTER_MONITOR = Color.decode("#F4E289");
+    public static final Color VS_CODE_BACKGROUND = Color.decode("#2C2929");
 
     public static final Color LINE = BLACK;
-
 }
 
 public class NewYear extends JPanel {
@@ -103,6 +103,38 @@ public class NewYear extends JPanel {
 
         // Computer Monitor
         drawRectangle(g, 0, 121, 330, 361, MyColor.COMPUTER_MONITOR);
+
+        // App Window
+        drawRectangle(g, 20, 135, 295, 345, MyColor.WHITE);
+
+        // ขอบแนวนอน App Window
+        drawHorizontalLine(g, 20, 134, 275);
+        drawHorizontalLine(g, 20, 345, 275);
+
+        // ขอบแนวตั้ง App Window
+        drawVerticalLine(g, 20, 134, 211);
+        drawVerticalLine(g, 295, 134, 213);
+
+        // VS CODE
+        drawRectangle(g, 30, 160, 200, 345, MyColor.VS_CODE_BACKGROUND);
+
+        // VS CODE 2
+        drawRectangle(g, 205, 160, 285, 345, MyColor.VS_CODE_BACKGROUND);
+
+        // ขอบแนวนอน VS CODE
+        drawHorizontalLine(g, 30, 159, 255);
+
+        // ขอบแนวตั้ง VS CODE
+        drawVerticalLine(g, 30, 159, 186);
+        drawVerticalLine(g, 200, 159, 186);
+
+        // ขอบแนวตั้ง VS CODE 2
+        drawVerticalLine(g, 205, 159, 186);
+        drawVerticalLine(g, 285, 159, 186);
+
+
+
+
     }
 
     private void plot(Graphics g, int x, int y) {
