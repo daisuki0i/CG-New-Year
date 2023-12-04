@@ -50,24 +50,24 @@ public class NewYear extends JPanel {
         }
 
         // Table
-        drawRectangle(g, 0, 425, 600, 600, MyColor.TABLE); 
+        drawRectangle(g, 0, 425, 600, 600, MyColor.TABLE);
 
         // ขอบ Table
-        drawRectangle(g, 0, 423, 600, 425, MyColor.BLACK); 
+        drawRectangle(g, 0, 423, 600, 425, MyColor.BLACK);
 
         // Window Frame
-        drawRectangle(g, 405, 50, 600, 280, MyColor.WINDOW); 
+        drawRectangle(g, 405, 50, 600, 280, MyColor.WINDOW);
         drawRectangle(g, 395, 280, 600, 303, MyColor.WINDOW);
         drawRectangle(g, 412, 300, 600, 314, MyColor.WINDOW);
 
         // ขอบแนวนอน Window Frame
-        drawHorizontalLine(g, 405, 49, 195); 
+        drawHorizontalLine(g, 405, 49, 195);
         drawHorizontalLine(g, 395, 280, 205);
         drawHorizontalLine(g, 395, 301, 205);
         drawHorizontalLine(g, 411, 314, 189);
 
         // ขอบแนวตั้ง Window Frame
-        drawVerticalLine(g, 405, 49, 231); 
+        drawVerticalLine(g, 405, 49, 231);
         drawVerticalLine(g, 395, 280, 23);
         drawVerticalLine(g, 410, 302, 13);
 
@@ -89,7 +89,7 @@ public class NewYear extends JPanel {
         drawHorizontalLine(g, 0, 380, 340);
 
         // ขอบแนวตั้ง Monitor Border
-         drawVerticalLine(g, 340, 100, 282);
+        drawVerticalLine(g, 340, 100, 282);
 
         // Shadow Monitor Border
         drawRectangle(g, 0, 111, 330, 121, MyColor.SHADOW_MONITOR_BORDER);
@@ -98,7 +98,7 @@ public class NewYear extends JPanel {
         // ขอบแนวนอน Shadow Monitor Border
         drawHorizontalLine(g, 0, 110, 330);
         drawHorizontalLine(g, 0, 119, 330);
-        
+
         drawHorizontalLine(g, 0, 361, 330);
         drawHorizontalLine(g, 0, 369, 330);
 
@@ -147,7 +147,25 @@ public class NewYear extends JPanel {
         
         // CODE COLOR 2
         drawRectangle(g, 220, 170, 280, 174, MyColor.WHITE);
+        // Monitor Stand
+        drawRectangle(g, 100, 382, 150, 435, MyColor.MONITOR_BORDER);
 
+        // ขอบแนวนอน Monitor Stand
+        drawHorizontalLine(g, 100, 435, 50);
+
+        // ขอบแนวตั้ง Monitor Stand
+        drawVerticalLine(g, 100, 381, 54);
+        drawVerticalLine(g, 150, 381, 56);
+
+        // Monitor Stand Shadow
+        drawRectangle(g, 152, 382, 165, 430, MyColor.SHADOW_MONITOR_BORDER);
+        int[] xPoints = { 152, 165, 152 };
+        int[] yPoints = { 430, 430, 435 };
+        g.fillPolygon(xPoints, yPoints, 3);
+
+        // ขอบแนวตั้ง Monitor Stand Shadow
+        drawVerticalLine(g, 165, 381, 49);
+        drawLine(g, 152, 435, 165, 430, MyColor.LINE);
     }
 
     private void plot(Graphics g, int x, int y) {
@@ -175,7 +193,8 @@ public class NewYear extends JPanel {
         drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, color);
     }
 
-    private void drawLine(Graphics g, int x1, int y1, int x2, int y2) {
+    private void drawLine(Graphics g, int x1, int y1, int x2, int y2, Color color) {
+        g.setColor(color);
         g.drawLine(x1, y1, x2, y2);
     }
 
