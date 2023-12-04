@@ -15,8 +15,12 @@ class MyColor extends Color {
     public static final Color SHADOW_MONITOR_BORDER = Color.decode("#7B7D83");
     public static final Color COMPUTER_MONITOR = Color.decode("#F4E289");
     public static final Color VS_CODE_BACKGROUND = Color.decode("#2C2929");
+    public static final Color CODE_COLOR_ORANGE = Color.decode("#DA6F31");
+    public static final Color CODE_COLOR_GREEN = Color.decode("#179158");
+
 
     public static final Color LINE = BLACK;
+
 }
 
 public class NewYear extends JPanel {
@@ -132,8 +136,17 @@ public class NewYear extends JPanel {
         drawVerticalLine(g, 205, 159, 186);
         drawVerticalLine(g, 285, 159, 186);
 
-
-
+        // CODE COLOR
+        drawRectangle(g, 35, 170, 55, 174, MyColor.CODE_COLOR_ORANGE);
+        drawRectangle(g, 60, 170, 100, 174, MyColor.WHITE);
+        drawRectangle(g, 105, 170, 125, 174, MyColor.CODE_COLOR_GREEN);
+        drawRectangle(g, 130, 170, 145, 174, MyColor.RED);
+        drawRectangle(g, 150, 170, 175, 174, MyColor.WHITE);
+        drawRectangle(g, 180, 170, 195, 174, MyColor.YELLOW);
+  
+        
+        // CODE COLOR 2
+        drawRectangle(g, 220, 170, 280, 174, MyColor.WHITE);
 
     }
 
