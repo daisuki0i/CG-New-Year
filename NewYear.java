@@ -18,7 +18,6 @@ class MyColor extends Color {
     public static final Color CODE_COLOR_ORANGE = Color.decode("#DA6F31");
     public static final Color CODE_COLOR_GREEN = Color.decode("#179158");
 
-
     public static final Color LINE = BLACK;
 
 }
@@ -39,7 +38,44 @@ public class NewYear extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
+        
+    }
 
+    private void plot(Graphics g, int x, int y) {
+        g.fillRect(x, y, 1, 1);
+    }
+
+    private void drawRectangle(Graphics g, int x1, int y1, int x2, int y2, Color color) {
+        g.setColor(color);
+        for (int x = x1; x < x2; x++) {
+            for (int y = y1; y < y2; y++) {
+                plot(g, x, y);
+            }
+        }
+    }
+
+    private void drawHorizontalLine(Graphics g, int x1, int y1, int len) {
+        drawRectangle(g, x1, y1, x1 + len, y1 + LINE_WIDTH, MyColor.LINE);
+    }
+
+    private void drawVerticalLine(Graphics g, int x1, int y1, int len) {
+        drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, MyColor.LINE);
+    }
+
+    private void drawVerticalLine(Graphics g, int x1, int y1, int len, Color color) {
+        drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, color);
+    }
+
+    private void drawLine(Graphics g, int x1, int y1, int x2, int y2, Color color) {
+        g.setColor(color);
+        g.drawLine(x1, y1, x2, y2);
+    }
+
+    private void drawArc(Graphics g, int x, int y, int width, int height, int startAngle, int arcAngle) {
+        g.drawArc(x, y, width, height, startAngle, arcAngle);
+    }
+
+    private void old(Graphics g) {
         // พื้นหลัง
         drawRectangle(g, 0, 0, 600, 600, MyColor.BACKGROUND);
 
@@ -143,8 +179,7 @@ public class NewYear extends JPanel {
         drawRectangle(g, 130, 170, 145, 174, MyColor.RED);
         drawRectangle(g, 150, 170, 175, 174, MyColor.WHITE);
         drawRectangle(g, 180, 170, 195, 174, MyColor.YELLOW);
-  
-        
+
         // CODE COLOR 2
         drawRectangle(g, 220, 170, 280, 174, MyColor.WHITE);
         // Monitor Stand
@@ -166,40 +201,6 @@ public class NewYear extends JPanel {
         // ขอบแนวตั้ง Monitor Stand Shadow
         drawVerticalLine(g, 165, 381, 49);
         drawLine(g, 152, 435, 165, 430, MyColor.LINE);
-    }
-
-    private void plot(Graphics g, int x, int y) {
-        g.fillRect(x, y, 1, 1);
-    }
-
-    private void drawRectangle(Graphics g, int x1, int y1, int x2, int y2, Color color) {
-        g.setColor(color);
-        for (int x = x1; x < x2; x++) {
-            for (int y = y1; y < y2; y++) {
-                plot(g, x, y);
-            }
-        }
-    }
-
-    private void drawHorizontalLine(Graphics g, int x1, int y1, int len) {
-        drawRectangle(g, x1, y1, x1 + len, y1 + LINE_WIDTH, MyColor.LINE);
-    }
-
-    private void drawVerticalLine(Graphics g, int x1, int y1, int len) {
-        drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, MyColor.LINE);
-    }
-
-    private void drawVerticalLine(Graphics g, int x1, int y1, int len, Color color) {
-        drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, color);
-    }
-
-    private void drawLine(Graphics g, int x1, int y1, int x2, int y2, Color color) {
-        g.setColor(color);
-        g.drawLine(x1, y1, x2, y2);
-    }
-
-    private void drawArc(Graphics g, int x, int y, int width, int height, int startAngle, int arcAngle) {
-        g.drawArc(x, y, width, height, startAngle, arcAngle);
     }
 
 }
