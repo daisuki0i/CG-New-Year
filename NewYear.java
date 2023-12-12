@@ -38,37 +38,77 @@ public class NewYear extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
-        
+        old(g);
     }
 
     private void plot(Graphics g, int x, int y) {
         g.fillRect(x, y, 1, 1);
     }
 
-    private void drawRectangle(Graphics g, int x1, int y1, int x2, int y2, Color color) {
-        g.setColor(color);
-        for (int x = x1; x < x2; x++) {
-            for (int y = y1; y < y2; y++) {
-                plot(g, x, y);
-            }
+    private void fillRectangle(Graphics g, int x1, int y1, int x2, int y2, Color color) {
+        for (int y = y1; y < y2; y++) {
+            drawLine(g, x1, y, x2, y, color);
         }
     }
 
     private void drawHorizontalLine(Graphics g, int x1, int y1, int len) {
-        drawRectangle(g, x1, y1, x1 + len, y1 + LINE_WIDTH, MyColor.LINE);
+        fillRectangle(g, x1, y1, x1 + len, y1 + LINE_WIDTH, MyColor.LINE);
     }
 
     private void drawVerticalLine(Graphics g, int x1, int y1, int len) {
-        drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, MyColor.LINE);
+        fillRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, MyColor.LINE);
     }
 
     private void drawVerticalLine(Graphics g, int x1, int y1, int len, Color color) {
-        drawRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, color);
+        fillRectangle(g, x1, y1, x1 + LINE_WIDTH, y1 + len, color);
+    }
+
+    private void drawLine(Graphics g, int x1, int y1, int x2, int y2, int thickness, Color color) {
+        g.setColor(color);
+
+        // Bresenham's line algorithm
+        int dx = Math.abs(x2 - x1);
+        int dy = Math.abs(y2 - y1);
+        int sx = (x1 < x2) ? 1 : -1;
+        int sy = (y1 < y2) ? 1 : -1;
+        boolean isSwapped = false;
+
+        if (dy > dx) {
+            int temp = dx;
+            dx = dy;
+            dy = temp;
+            isSwapped = true;
+        }
+
+        int D = 2 * dy - dx;
+        int x = x1;
+        int y = y1;
+
+        for (int i = 0; i < dx; i++) {
+            for (int j = 0; j < thickness; j++) {
+                plot(g, x, y + j);
+            }
+            while (D >= 0) {
+                if (isSwapped) {
+                    x += sx;
+                } else {
+                    y += sy;
+                }
+                D -= 2 * dx;
+            }
+
+            if (isSwapped) {
+                y += sy;
+            } else {
+                x += sx;
+            }
+
+            D += 2 * dy;
+        }
     }
 
     private void drawLine(Graphics g, int x1, int y1, int x2, int y2, Color color) {
-        g.setColor(color);
-        g.drawLine(x1, y1, x2, y2);
+        drawLine(g, x1, y1, x2, y2, 1, color);
     }
 
     private void drawArc(Graphics g, int x, int y, int width, int height, int startAngle, int arcAngle) {
@@ -77,7 +117,7 @@ public class NewYear extends JPanel {
 
     private void old(Graphics g) {
         // พื้นหลัง
-        drawRectangle(g, 0, 0, 600, 600, MyColor.BACKGROUND);
+        fillRectangle(g, 0, 0, 600, 600, MyColor.BACKGROUND);
 
         // ลายผนัง
         int lineSpacing = 55;
@@ -86,15 +126,15 @@ public class NewYear extends JPanel {
         }
 
         // Table
-        drawRectangle(g, 0, 425, 600, 600, MyColor.TABLE);
+        fillRectangle(g, 0, 425, 600, 600, MyColor.TABLE);
 
         // ขอบ Table
-        drawRectangle(g, 0, 423, 600, 425, MyColor.BLACK);
+        fillRectangle(g, 0, 423, 600, 425, MyColor.BLACK);
 
         // Window Frame
-        drawRectangle(g, 405, 50, 600, 280, MyColor.WINDOW);
-        drawRectangle(g, 395, 280, 600, 303, MyColor.WINDOW);
-        drawRectangle(g, 412, 300, 600, 314, MyColor.WINDOW);
+        fillRectangle(g, 405, 50, 600, 280, MyColor.WINDOW);
+        fillRectangle(g, 395, 280, 600, 303, MyColor.WINDOW);
+        fillRectangle(g, 412, 300, 600, 314, MyColor.WINDOW);
 
         // ขอบแนวนอน Window Frame
         drawHorizontalLine(g, 405, 49, 195);
@@ -108,7 +148,7 @@ public class NewYear extends JPanel {
         drawVerticalLine(g, 410, 302, 13);
 
         // Sky
-        drawRectangle(g, 419, 63, 600, 268, MyColor.NIGHTTIME);
+        fillRectangle(g, 419, 63, 600, 268, MyColor.NIGHTTIME);
 
         // ขอบแนวนอน Sky
         drawHorizontalLine(g, 419, 63, 181);
@@ -118,7 +158,7 @@ public class NewYear extends JPanel {
         drawVerticalLine(g, 419, 63, 205);
 
         // Monitor Border
-        drawRectangle(g, 0, 100, 340, 380, MyColor.MONITOR_BORDER);
+        fillRectangle(g, 0, 100, 340, 380, MyColor.MONITOR_BORDER);
 
         // กรอบแนวนอน Monitor Border
         drawHorizontalLine(g, 0, 100, 340);
@@ -128,8 +168,8 @@ public class NewYear extends JPanel {
         drawVerticalLine(g, 340, 100, 282);
 
         // Shadow Monitor Border
-        drawRectangle(g, 0, 111, 330, 121, MyColor.SHADOW_MONITOR_BORDER);
-        drawRectangle(g, 0, 361, 330, 370, MyColor.SHADOW_MONITOR_BORDER);
+        fillRectangle(g, 0, 111, 330, 121, MyColor.SHADOW_MONITOR_BORDER);
+        fillRectangle(g, 0, 361, 330, 370, MyColor.SHADOW_MONITOR_BORDER);
 
         // ขอบแนวนอน Shadow Monitor Border
         drawHorizontalLine(g, 0, 110, 330);
@@ -142,10 +182,10 @@ public class NewYear extends JPanel {
         drawVerticalLine(g, 330, 110, 261);
 
         // Computer Monitor
-        drawRectangle(g, 0, 121, 330, 361, MyColor.COMPUTER_MONITOR);
+        fillRectangle(g, 0, 121, 330, 361, MyColor.COMPUTER_MONITOR);
 
         // App Window
-        drawRectangle(g, 20, 135, 295, 345, MyColor.WHITE);
+        fillRectangle(g, 20, 135, 295, 345, MyColor.WHITE);
 
         // ขอบแนวนอน App Window
         drawHorizontalLine(g, 20, 134, 275);
@@ -156,10 +196,10 @@ public class NewYear extends JPanel {
         drawVerticalLine(g, 295, 134, 213);
 
         // VS CODE
-        drawRectangle(g, 30, 160, 200, 345, MyColor.VS_CODE_BACKGROUND);
+        fillRectangle(g, 30, 160, 200, 345, MyColor.VS_CODE_BACKGROUND);
 
         // VS CODE 2
-        drawRectangle(g, 205, 160, 285, 345, MyColor.VS_CODE_BACKGROUND);
+        fillRectangle(g, 205, 160, 285, 345, MyColor.VS_CODE_BACKGROUND);
 
         // ขอบแนวนอน VS CODE
         drawHorizontalLine(g, 30, 159, 255);
@@ -173,17 +213,17 @@ public class NewYear extends JPanel {
         drawVerticalLine(g, 285, 159, 186);
 
         // CODE COLOR
-        drawRectangle(g, 35, 170, 55, 174, MyColor.CODE_COLOR_ORANGE);
-        drawRectangle(g, 60, 170, 100, 174, MyColor.WHITE);
-        drawRectangle(g, 105, 170, 125, 174, MyColor.CODE_COLOR_GREEN);
-        drawRectangle(g, 130, 170, 145, 174, MyColor.RED);
-        drawRectangle(g, 150, 170, 175, 174, MyColor.WHITE);
-        drawRectangle(g, 180, 170, 195, 174, MyColor.YELLOW);
+        fillRectangle(g, 35, 170, 55, 174, MyColor.CODE_COLOR_ORANGE);
+        fillRectangle(g, 60, 170, 100, 174, MyColor.WHITE);
+        fillRectangle(g, 105, 170, 125, 174, MyColor.CODE_COLOR_GREEN);
+        fillRectangle(g, 130, 170, 145, 174, MyColor.RED);
+        fillRectangle(g, 150, 170, 175, 174, MyColor.WHITE);
+        fillRectangle(g, 180, 170, 195, 174, MyColor.YELLOW);
 
         // CODE COLOR 2
-        drawRectangle(g, 220, 170, 280, 174, MyColor.WHITE);
+        fillRectangle(g, 220, 170, 280, 174, MyColor.WHITE);
         // Monitor Stand
-        drawRectangle(g, 100, 382, 150, 435, MyColor.MONITOR_BORDER);
+        fillRectangle(g, 100, 382, 150, 435, MyColor.MONITOR_BORDER);
 
         // ขอบแนวนอน Monitor Stand
         drawHorizontalLine(g, 100, 435, 50);
@@ -193,14 +233,14 @@ public class NewYear extends JPanel {
         drawVerticalLine(g, 150, 381, 56);
 
         // Monitor Stand Shadow
-        drawRectangle(g, 152, 382, 165, 430, MyColor.SHADOW_MONITOR_BORDER);
+        fillRectangle(g, 152, 382, 165, 430, MyColor.SHADOW_MONITOR_BORDER);
         int[] xPoints = { 152, 165, 152 };
         int[] yPoints = { 430, 430, 435 };
         g.fillPolygon(xPoints, yPoints, 3);
 
         // ขอบแนวตั้ง Monitor Stand Shadow
         drawVerticalLine(g, 165, 381, 49);
-        drawLine(g, 152, 435, 165, 430, MyColor.LINE);
+        drawLine(g, 152, 435, 166, 430, 2, MyColor.LINE);
     }
 
 }
