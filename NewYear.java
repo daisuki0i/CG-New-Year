@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import java.awt.geom.Arc2D;
 
 class MyColor extends Color {
     public MyColor(int r, int g, int b) {
@@ -19,6 +20,8 @@ class MyColor extends Color {
     public static final Color CODE_COLOR_GREEN = Color.decode("#179158");
 
     public static final Color LINE = BLACK;
+    
+    public static final Color SKY = Color.decode("#653D84");
 
 }
 
@@ -38,7 +41,21 @@ public class NewYear extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
-        
+        drawRectangle(g, 0, 0, 600, 600, MyColor.SKY);
+
+        drawArc(g,0, 400, 600, 10, 0, 450, MyColor.LINE);
+
+        Graphics2D g2d = (Graphics2D) g;
+
+        Color[] colors = {Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.BLUE, Color.BLACK, Color.WHITE};
+        int radius = 300;
+
+        for (int i = 0; i < colors.length; i++) {
+            Arc2D.Float arc = new Arc2D.Float(300 - i * radius / colors.length, 300 - i * radius / colors.length, i * radius, i * radius, 0, -180, Arc2D.OPEN);
+            g2d.setColor(colors[i]);
+            g2d.draw(arc);
+        }
+
     }
 
     private void plot(Graphics g, int x, int y) {
@@ -71,7 +88,8 @@ public class NewYear extends JPanel {
         g.drawLine(x1, y1, x2, y2);
     }
 
-    private void drawArc(Graphics g, int x, int y, int width, int height, int startAngle, int arcAngle) {
+    private void drawArc(Graphics g, int x, int y, int width, int height, int startAngle, int arcAngle, Color color) {
+        g.setColor(color);
         g.drawArc(x, y, width, height, startAngle, arcAngle);
     }
 
