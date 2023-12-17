@@ -1,3 +1,4 @@
+package experiments;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.QuadCurve2D;

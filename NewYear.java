@@ -1,13 +1,22 @@
 import java.awt.*;
 import javax.swing.*;
-import java.awt.geom.Arc2D;
 
 class MyColor extends Color {
     public MyColor(int r, int g, int b) {
         super(r, g, b);
     }
 
-    public static final Color BACKGROUND = Color.decode("#E2998E");
+    public static final Color[] BACKGROUND_GRADIENT_COLOR = {
+        Color.decode("#363183"),
+        Color.decode("#3B3386"),
+        Color.decode("#3F3583"),
+        Color.decode("#4A3486"),
+        Color.decode("#523784"),
+        Color.decode("#663E85"),
+        Color.decode("#744388")
+
+    };
+
     public static final Color HOUSE_WALL = Color.decode("#BC645C");
     public static final Color WINDOW = Color.decode("#DDA763");
     public static final Color TABLE = Color.decode("#606355");
@@ -38,10 +47,51 @@ public class NewYear extends JPanel {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
         f.setLocationRelativeTo(null); // หน้าต่างอยู่ตรงกลาง
+
+
     }
 
     public void paintComponent(Graphics g) {
-        old(g);
+        Graphics2D g2d = (Graphics2D) g.create();
+
+        int width = getWidth();
+        int height = getHeight();
+
+        // Create a gradient paint
+        GradientPaint gradientPaint = new GradientPaint(0, 0, MyColor.BACKGROUND_GRADIENT_COLOR[0], 0, 400, MyColor.BACKGROUND_GRADIENT_COLOR[MyColor.BACKGROUND_GRADIENT_COLOR.length - 1]);
+
+        // Set the paint to the graphics context
+        g2d.setPaint(gradientPaint);
+
+        // Fill the background with the gradient
+        g2d.fillRect(0, 0, width, height);
+
+        g2d.dispose();
+
+        int x1 = 600;
+        int y1 = 400;
+        int x2 = 0;
+        int y2 = 350;
+
+        int ctrlX = x1 + 100; // Adjust this value for curvature
+        int ctrlY = y1 - 50; // Adjust this value for curvature
+
+        drawBezierCurve(g, x1, y1, ctrlX, ctrlY, x2, y2, 2); // Adjust thickness here
+
+        y1 -= 12;
+        y2 -= 12;
+        ctrlY -= 12;
+        drawBezierCurve(g, x1, y1, ctrlX, ctrlY, x2, y2, 2); // Adjust thickness here
+
+        y1 -= 42;
+        y2 -= 42;
+        ctrlY -= 42;
+        drawBezierCurve(g, x1, y1, ctrlX, ctrlY, x2, y2, 2); // Adjust thickness here
+
+        y1 -= 10;
+        y2 -= 10;
+        ctrlY -= 10;
+        drawBezierCurve(g, x1, y1, ctrlX, ctrlY, x2, y2, 2); // Adjust thickness here
     }
 
     private void plot(Graphics g, int x, int y) {
@@ -119,9 +169,35 @@ public class NewYear extends JPanel {
         g.drawArc(x, y, width, height, startAngle, arcAngle);
     }
 
+    private void drawBezierCurve(Graphics g, int x1, int y1, int ctrlX, int ctrlY, int x2, int y2, int thickness) {
+        int resolution = 900;
+
+        for (int t = 0; t <= resolution; t++) {
+            float u = t / (float) resolution;
+            float uComp = 1 - u;
+
+            int x = (int) (uComp * uComp * x1 + 2 * uComp * u * ctrlX + u * u * x2);
+            int y = (int) (uComp * uComp * y1 + 2 * uComp * u * ctrlY + u * u * y2);
+
+            drawHorizontalLine(g, x, y, thickness, thickness);
+        }
+    }
+
+    private void drawRectangle(Graphics g, int x1, int y1, int x2, int y2) {
+        for (int x = x1; x < x2; x++) {
+            for (int y = y1; y < y2; y++) {
+                plot(g, x, y);
+            }
+        }
+    }
+
+    private void drawHorizontalLine(Graphics g, int x1, int y1, int width, int len) {
+        drawRectangle(g, x1, y1, x1 + len, y1 + width);
+    }
+
     private void old(Graphics g) {
         // พื้นหลัง
-        fillRectangle(g, 0, 0, 600, 600, MyColor.BACKGROUND);
+        // fillRectangle(g, 0, 0, 600, 600, MyColor.BACKGROUND);
 
         // ลายผนัง
         int lineSpacing = 55;

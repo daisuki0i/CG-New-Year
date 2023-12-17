@@ -16,10 +16,10 @@ public class BezierCurveExample extends JFrame {
     public void paint(Graphics g) {
         super.paint(g);
 
-        int x1 = 0;
-        int y1 = 250;
-        int x2 = 400;
-        int y2 = 300;
+        int x1 = 400;
+        int y1 = 300;
+        int x2 = 0;
+        int y2 = 250;
 
         int ctrlX = x1 + 100; // Adjust this value for curvature
         int ctrlY = y1 - 20; // Adjust this value for curvature
