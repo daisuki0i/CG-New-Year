@@ -20,6 +20,11 @@ class MyColor extends Color {
             Color.decode("#744388")
     };
 
+    public static final Color FERRIS_WHEEL = Color.decode("#AD7A77");
+    public static final Color VIVID_VISION = Color.decode("#615063");
+    public static final Color SCHIAVA_BLUE = Color.decode("#193461");
+    public static final Color SASQUATCH_SOCKS = Color.decode("#ff4b7b");
+
 }
 
 public class NewYear extends JPanel {
@@ -39,33 +44,37 @@ public class NewYear extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
-        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = buffer.createGraphics();
-        drawBackground(g2);
+        BufferedImage bgBuffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D bgg = bgBuffer.createGraphics();
+        drawBackground(bgg);
 
-        g.drawImage(buffer, 0, 0, null);
+        // g.drawImage(bgBuffer, 0, 0, null);
 
-        drawArc(g, new Point(0, 350), new Point(150, 352), new Point(600, 370), new Point(750, 480), MyColor.BLACK);
-        drawArc(g, new Point(0, 340), new Point(150, 342), new Point(600, 360), new Point(750, 470), MyColor.BLACK);
-        drawArc(g, new Point(0, 290), new Point(150, 292), new Point(600, 310), new Point(750, 420), MyColor.BLACK);
-        drawArc(g, new Point(0, 282), new Point(150, 284), new Point(600, 302), new Point(750, 412), MyColor.BLACK);
+        BufferedImage mainBuffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D mg = mainBuffer.createGraphics();
+        drawWhiteBackground(mg);
 
-        drawLine(g, new Point(1, 400), new Point(40, 400), MyColor.BLACK);
-        drawLine(g, new Point(120, 440), new Point(159, 440), MyColor.BLACK);
-        drawArc(g, new Point(1, 400), new Point(55, 415), new Point(66, 415), new Point(120, 440), MyColor.BLACK);
-        drawArc(g, new Point(40, 400), new Point(95, 415), new Point(106, 415), new Point(159, 440), MyColor.BLACK);
+        drawArc(mg, new Point(0, 350), new Point(150, 352), new Point(600, 370), new Point(750, 480), MyColor.BLACK);
+        drawArc(mg, new Point(0, 340), new Point(150, 342), new Point(600, 360), new Point(750, 470), MyColor.BLACK);
+        drawArc(mg, new Point(0, 290), new Point(150, 292), new Point(600, 310), new Point(750, 420), MyColor.BLACK);
+        drawArc(mg, new Point(0, 282), new Point(150, 284), new Point(600, 302), new Point(750, 412), MyColor.BLACK);
 
-        drawLine(g, new Point(491, 520), new Point(430, 520), MyColor.BLACK);
-        drawLine(g, new Point(571, 600), new Point(600, 600), MyColor.BLACK);
-        drawArc(g, new Point(491, 520), new Point(536, 550), new Point(560, 550), new Point(600, 600), MyColor.BLACK);
-        drawArc(g, new Point(430, 520), new Point(475, 550), new Point(499, 550), new Point(539, 600), MyColor.BLACK);
+        drawLine(mg, new Point(1, 400), new Point(40, 400), MyColor.BLACK);
+        drawLine(mg, new Point(120, 440), new Point(159, 440), MyColor.BLACK);
+        drawArc(mg, new Point(1, 400), new Point(55, 415), new Point(66, 415), new Point(120, 440), MyColor.BLACK);
+        drawArc(mg, new Point(40, 400), new Point(95, 415), new Point(106, 415), new Point(159, 440), MyColor.BLACK);
+
+        drawLine(mg, new Point(491, 520), new Point(430, 520), MyColor.BLACK);
+        drawLine(mg, new Point(571, 600), new Point(600, 600), MyColor.BLACK);
+        drawArc(mg, new Point(491, 520), new Point(536, 550), new Point(560, 550), new Point(600, 600), MyColor.BLACK);
+        drawArc(mg, new Point(430, 520), new Point(475, 550), new Point(499, 550), new Point(539, 600), MyColor.BLACK);
 
         // draw barrier
         int[] yPoints = { 340, 340, 340, 340, 340, 340, 340, 341, 341 };
         int xStart = 10;
         int poleWidth = 10;
         for (int i = 0; i < yPoints.length; i++) {
-            drawLine(g, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
             xStart += poleWidth;
         }
 
@@ -73,15 +82,15 @@ public class NewYear extends JPanel {
         xStart = 105;
         int stepWidth = 15;
         for (int i = 0; i < yPoints.length; i++) {
-            drawLine(g, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
             xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
         }
 
-        yPoints = new int[] {352, 353, 354, 355, 357, 358, 360, 361};
+        yPoints = new int[] { 352, 353, 354, 355, 357, 358, 360, 361 };
         xStart = 260;
         stepWidth = 20;
         for (int i = 0; i < yPoints.length; i++) {
-            drawLine(g, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
             xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
         }
 
@@ -89,9 +98,46 @@ public class NewYear extends JPanel {
         xStart = 400;
         stepWidth = 40;
         for (int i = 0; i < yPoints.length; i++) {
-            drawLine(g, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
             xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
         }
+
+        mainBuffer = floodFill(mainBuffer, new Point(80, 415), Color.WHITE, MyColor.FERRIS_WHEEL);
+        mainBuffer = floodFill(mainBuffer, new Point(520, 550), Color.WHITE, MyColor.VIVID_VISION);
+        mainBuffer = floodFill(mainBuffer, new Point(300, 400), Color.WHITE, MyColor.SCHIAVA_BLUE);
+
+        mainBuffer = floodFill(mainBuffer, new Point(5, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(25, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(45, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(65, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(85, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(105, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+
+        mainBuffer = floodFill(mainBuffer, new Point(110, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(135, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(160, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(185, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(210, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(235, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+
+        mainBuffer = floodFill(mainBuffer, new Point(265, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(295, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(325, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(355, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+
+        mainBuffer = floodFill(mainBuffer, new Point(405, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(455, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+
+        mainBuffer = floodFill(mainBuffer, new Point(505, 350), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(555, 350), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        
+
+
+        g.drawImage(bgBuffer, 0, 0, null);
+        g.drawImage(mainBuffer, 0, 0, null);
+
+        g.setColor(MyColor.RED);
+        g.fillRect(5, 330, 5, 5);
     }
 
     private void plot(Graphics g, int x, int y) {
@@ -117,35 +163,57 @@ public class NewYear extends JPanel {
         g2d.dispose();
     }
 
+    private void drawWhiteBackground(Graphics g) {
+        g.setColor(Color.WHITE);
+        for (int x = 0; x <= 600; x++) {
+            for (int y = 0; y <= 600; y++) {
+                plot(g, x, y);
+            }
+        }
+    }
+
     public BufferedImage floodFill(BufferedImage m, Point p, Color target_colour, Color replacement_colour) {
-        // ทำการเติมสี replacement_colour ในพื้นที่ที่มีสี target_colour ด้วยวิธี Flood
-        // Fill
+        // Perform flood fill algorithm to replace target_colour with replacement_colour
         Queue<Point> q = new LinkedList<>();
-        m.setRGB(p.x, p.y, replacement_colour.getRGB());
-        q.add(new Point(p.x, p.y));
+        int targetRGB = target_colour.getRGB();
+        int replacementRGB = replacement_colour.getRGB();
+
+        if (targetRGB == replacementRGB) {
+            return m;
+        }
+
+        int width = m.getWidth();
+        int height = m.getHeight();
+        int originalRGB = m.getRGB(p.x, p.y);
+
+        if (originalRGB == replacementRGB) {
+            return m;
+        }
+
+        q.add(p);
 
         while (!q.isEmpty()) {
             Point currentPoint = q.poll();
-            Point south = new Point(currentPoint.x, currentPoint.y + 1);
-            Point north = new Point(currentPoint.x, currentPoint.y - 1);
-            Point east = new Point(currentPoint.x + 1, currentPoint.y);
-            Point west = new Point(currentPoint.x - 1, currentPoint.y);
+            int x = currentPoint.x;
+            int y = currentPoint.y;
 
-            if (m.getRGB(south.x, south.y) == target_colour.getRGB()) {
-                m.setRGB(south.x, south.y, replacement_colour.getRGB());
-                q.add(south);
+            if (m.getRGB(x, y) != targetRGB) {
+                continue;
             }
-            if (m.getRGB(north.x, north.y) == target_colour.getRGB()) {
-                m.setRGB(north.x, north.y, replacement_colour.getRGB());
-                q.add(north);
+
+            m.setRGB(x, y, replacementRGB);
+
+            if (x > 0 && m.getRGB(x - 1, y) == targetRGB) {
+                q.add(new Point(x - 1, y));
             }
-            if (m.getRGB(east.x, east.y) == target_colour.getRGB()) {
-                m.setRGB(east.x, east.y, replacement_colour.getRGB());
-                q.add(east);
+            if (x < width - 1 && m.getRGB(x + 1, y) == targetRGB) {
+                q.add(new Point(x + 1, y));
             }
-            if (m.getRGB(west.x, west.y) == target_colour.getRGB()) {
-                m.setRGB(west.x, west.y, replacement_colour.getRGB());
-                q.add(west);
+            if (y > 0 && m.getRGB(x, y - 1) == targetRGB) {
+                q.add(new Point(x, y - 1));
+            }
+            if (y < height - 1 && m.getRGB(x, y + 1) == targetRGB) {
+                q.add(new Point(x, y + 1));
             }
         }
 
