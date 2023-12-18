@@ -18,23 +18,7 @@ class MyColor extends Color {
             Color.decode("#523784"),
             Color.decode("#663E85"),
             Color.decode("#744388")
-
     };
-
-    public static final Color HOUSE_WALL = Color.decode("#BC645C");
-    public static final Color WINDOW = Color.decode("#DDA763");
-    public static final Color TABLE = Color.decode("#606355");
-    public static final Color NIGHTTIME = Color.decode("#13547A");
-    public static final Color MONITOR_BORDER = Color.decode("#ACB1B7");
-    public static final Color SHADOW_MONITOR_BORDER = Color.decode("#7B7D83");
-    public static final Color COMPUTER_MONITOR = Color.decode("#F4E289");
-    public static final Color VS_CODE_BACKGROUND = Color.decode("#2C2929");
-    public static final Color CODE_COLOR_ORANGE = Color.decode("#DA6F31");
-    public static final Color CODE_COLOR_GREEN = Color.decode("#179158");
-
-    public static final Color LINE = BLACK;
-
-    public static final Color SKY = Color.decode("#653D84");
 
 }
 
@@ -60,6 +44,54 @@ public class NewYear extends JPanel {
         drawBackground(g2);
 
         g.drawImage(buffer, 0, 0, null);
+
+        drawArc(g, new Point(0, 350), new Point(150, 352), new Point(600, 370), new Point(750, 480), MyColor.BLACK);
+        drawArc(g, new Point(0, 340), new Point(150, 342), new Point(600, 360), new Point(750, 470), MyColor.BLACK);
+        drawArc(g, new Point(0, 290), new Point(150, 292), new Point(600, 310), new Point(750, 420), MyColor.BLACK);
+        drawArc(g, new Point(0, 282), new Point(150, 284), new Point(600, 302), new Point(750, 412), MyColor.BLACK);
+
+        drawLine(g, new Point(1, 400), new Point(40, 400), MyColor.BLACK);
+        drawLine(g, new Point(120, 440), new Point(159, 440), MyColor.BLACK);
+        drawArc(g, new Point(1, 400), new Point(55, 415), new Point(66, 415), new Point(120, 440), MyColor.BLACK);
+        drawArc(g, new Point(40, 400), new Point(95, 415), new Point(106, 415), new Point(159, 440), MyColor.BLACK);
+
+        drawLine(g, new Point(491, 520), new Point(430, 520), MyColor.BLACK);
+        drawLine(g, new Point(571, 600), new Point(600, 600), MyColor.BLACK);
+        drawArc(g, new Point(491, 520), new Point(536, 550), new Point(560, 550), new Point(600, 600), MyColor.BLACK);
+        drawArc(g, new Point(430, 520), new Point(475, 550), new Point(499, 550), new Point(539, 600), MyColor.BLACK);
+
+        // draw barrier
+        int[] yPoints = { 340, 340, 340, 340, 340, 340, 340, 341, 341 };
+        int xStart = 10;
+        int poleWidth = 10;
+        for (int i = 0; i < yPoints.length; i++) {
+            drawLine(g, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            xStart += poleWidth;
+        }
+
+        yPoints = new int[] { 342, 342, 343, 343, 344, 345, 346, 347, 348, 349, 350, 351 };
+        xStart = 105;
+        int stepWidth = 15;
+        for (int i = 0; i < yPoints.length; i++) {
+            drawLine(g, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
+        }
+
+        yPoints = new int[] {352, 353, 354, 355, 357, 358, 360, 361};
+        xStart = 260;
+        stepWidth = 20;
+        for (int i = 0; i < yPoints.length; i++) {
+            drawLine(g, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
+        }
+
+        yPoints = new int[] { 366, 368, 375, 376, 383, 385, 393, 396, 405 };
+        xStart = 400;
+        stepWidth = 40;
+        for (int i = 0; i < yPoints.length; i++) {
+            drawLine(g, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
+        }
     }
 
     private void plot(Graphics g, int x, int y) {
@@ -86,7 +118,8 @@ public class NewYear extends JPanel {
     }
 
     public BufferedImage floodFill(BufferedImage m, Point p, Color target_colour, Color replacement_colour) {
-        // ทำการเติมสี replacement_colour ในพื้นที่ที่มีสี target_colour ด้วยวิธี Flood Fill
+        // ทำการเติมสี replacement_colour ในพื้นที่ที่มีสี target_colour ด้วยวิธี Flood
+        // Fill
         Queue<Point> q = new LinkedList<>();
         m.setRGB(p.x, p.y, replacement_colour.getRGB());
         q.add(new Point(p.x, p.y));
@@ -138,7 +171,7 @@ public class NewYear extends JPanel {
 
         int D = 2 * dy - dx;
         int x = p1.x;
-        int y = p2.x;
+        int y = p1.y;
 
         for (int i = 0; i < dx; i++) {
             for (int j = 0; j < thickness; j++) {
@@ -168,6 +201,7 @@ public class NewYear extends JPanel {
     }
 
     private void drawArc(Graphics g, Point p1, Point p2, Point p3, Point p4, Color color) {
+        // markControlPoints(g, p1, p2, p3, p4);
         g.setColor(color);
         int n = 1000;
         for (int i = 0; i <= n; i++) {
@@ -177,6 +211,16 @@ public class NewYear extends JPanel {
             int y = (int) (Math.pow(1 - t, 3) * p1.y + 3 * t * Math.pow(1 - t, 2) * p2.y
                     + 3 * Math.pow(t, 2) * (1 - t) * p3.y + Math.pow(t, 3) * p4.y);
             plot(g, x, y);
+        }
+    }
+
+    private void markControlPoints(Graphics g, Point p1, Point p2, Point p3, Point p4) {
+        g.setColor(MyColor.RED);
+        int i = 1;
+        for (Point p : new Point[] { p1, p2, p3, p4 }) {
+            g.fillRect(p.x, p.y, 4, 4);
+            g.drawChars(("P" + i).toCharArray(), 0, 2, p.x + 5, p.y + 5);
+            i++;
         }
     }
 }
