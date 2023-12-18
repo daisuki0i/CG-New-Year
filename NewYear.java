@@ -23,10 +23,11 @@ class MyColor extends Color {
     public static final Color FERRIS_WHEEL = Color.decode("#AD7A77");
     public static final Color VIVID_VISION = Color.decode("#615063");
     public static final Color SCHIAVA_BLUE = Color.decode("#193461");
-    public static final Color SASQUATCH_SOCKS = Color.decode("#ff4b7b");
-    public static final Color ANTARCTIC_BLUE = Color.decode("#2b385e");
+    public static final Color SASQUATCH_SOCKS = Color.decode("#ff4b7b"); // pink
+    public static final Color ANTARCTIC_BLUE = Color.decode("#2b385e"); 
     public static final Color FRIJID_PINK = Color.decode("#FF8B7F");
-
+    public static final Color DEEP_WISTERIA = Color.decode("#47416e");
+    public static final Color TEST = Color.decode("#383D66");
 }
 
 public class NewYear extends JPanel {
@@ -108,9 +109,69 @@ public class NewYear extends JPanel {
             xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
         }
 
+        drawLine(mg, new Point(15, 340), new Point(15, 290), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(13, 330), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(35, 340), new Point(35, 290), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(33, 330), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(55, 340), new Point(55, 290), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(53, 330), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(75, 340), new Point(75, 290), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(73, 330), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(95, 341), new Point(95, 291), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(93, 331), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(120, 342), new Point(120, 292), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(118, 332), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(145, 343), new Point(145, 293), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(143, 333), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(170, 345), new Point(170, 295), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(168, 335), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(195, 347), new Point(195, 297), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(193, 337), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(220, 349), new Point(220, 299), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(218, 339), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(245, 351), new Point(245, 301), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(243, 341), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(275, 353), new Point(275, 303), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(273, 343), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(305, 355), new Point(305, 305), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(303, 345), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(335, 358), new Point(335, 308), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(333, 348), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(365, 362), new Point(365, 312), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(363, 352), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(415, 368), new Point(415, 318), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(413, 358), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(465, 376), new Point(465, 326), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(463, 366), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(515, 386), new Point(515, 336), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(513, 376), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+        drawLine(mg, new Point(565, 396), new Point(565, 346), MyColor.BLACK);
+        mainBuffer = floodFill(mainBuffer, new Point(563, 386), Color.WHITE, MyColor.DEEP_WISTERIA);
+
+
+
+        // color fill
         mainBuffer = floodFill(mainBuffer, new Point(80, 415), Color.WHITE, MyColor.FERRIS_WHEEL);
         mainBuffer = floodFill(mainBuffer, new Point(520, 550), Color.WHITE, MyColor.VIVID_VISION);
-        mainBuffer = floodFill(mainBuffer, new Point(300, 400), Color.WHITE, MyColor.SCHIAVA_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(300, 400), Color.WHITE, MyColor.TEST);
 
         int[] xPoints = new int[] { 5, 25, 45, 65, 85, 105, 110, 135, 160, 185, 210, 235, 265, 295, 325, 355, 405, 455, 505};        
         for (int i = 0; i < xPoints.length; i++) {
@@ -123,17 +184,11 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(5, 341), Color.WHITE, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(5, 346), Color.WHITE, MyColor.SASQUATCH_SOCKS);
 
-
-
-
-        
-
-
         g.drawImage(bgBuffer, 0, 0, null);
         g.drawImage(mainBuffer, 0, 0, null);
 
         g.setColor(MyColor.RED);
-        g.fillRect(5, 346, 5, 5);
+        g.fillRect(16, 300, 5, 5);
     }
 
     private void plot(Graphics g, int x, int y) {
