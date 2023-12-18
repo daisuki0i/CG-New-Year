@@ -25,6 +25,7 @@ class MyColor extends Color {
     public static final Color SCHIAVA_BLUE = Color.decode("#193461");
     public static final Color SASQUATCH_SOCKS = Color.decode("#ff4b7b");
     public static final Color ANTARCTIC_BLUE = Color.decode("#2b385e");
+    public static final Color FRIJID_PINK = Color.decode("#FF8B7F");
 
 }
 
@@ -55,29 +56,31 @@ public class NewYear extends JPanel {
         Graphics2D mg = mainBuffer.createGraphics();
         drawWhiteBackground(mg);
 
-        drawArc(mg, new Point(0, 350), new Point(150, 352), new Point(600, 370), new Point(750, 480), MyColor.BLACK);
+        drawArc(mg, new Point(0, 350), new Point(150, 352), new Point(600, 370), new Point(750, 480), MyColor.FRIJID_PINK);
+        drawArc(mg, new Point(0, 342), new Point(150, 347), new Point(600, 364), new Point(750, 479), MyColor.FRIJID_PINK);
         drawArc(mg, new Point(0, 340), new Point(150, 342), new Point(600, 360), new Point(750, 470), MyColor.BLACK);
 
         drawArc(mg, new Point(0, 290), new Point(150, 292), new Point(600, 310), new Point(750, 420), MyColor.BLACK);
-        drawArc(mg, new Point(0, 287), new Point(150, 292), new Point(600, 287), new Point(750, 420), MyColor.BLACK);
-        drawArc(mg, new Point(0, 282), new Point(150, 284), new Point(600, 302), new Point(750, 412), MyColor.BLACK);
+        drawArc(mg, new Point(0, 287), new Point(150, 287), new Point(600, 304), new Point(750, 416), MyColor.FRIJID_PINK);
+        drawArc(mg, new Point(0, 282), new Point(150, 284), new Point(600, 302), new Point(750, 412), MyColor.FRIJID_PINK);
 
-        drawLine(mg, new Point(1, 400), new Point(40, 400), MyColor.BLACK);
-        drawLine(mg, new Point(120, 440), new Point(159, 440), MyColor.BLACK);
-        drawArc(mg, new Point(1, 400), new Point(55, 415), new Point(66, 415), new Point(120, 440), MyColor.BLACK);
-        drawArc(mg, new Point(40, 400), new Point(95, 415), new Point(106, 415), new Point(159, 440), MyColor.BLACK);
+        drawLine(mg, new Point(1, 400), new Point(40, 400), MyColor.FERRIS_WHEEL);
+        drawLine(mg, new Point(120, 440), new Point(159, 440), MyColor.FERRIS_WHEEL);
+        drawArc(mg, new Point(1, 400), new Point(55, 415), new Point(66, 415), new Point(120, 440), MyColor.FERRIS_WHEEL);
+        drawArc(mg, new Point(40, 400), new Point(95, 415), new Point(106, 415), new Point(159, 440), MyColor.FERRIS_WHEEL);
 
-        drawLine(mg, new Point(491, 520), new Point(430, 520), MyColor.BLACK);
-        drawLine(mg, new Point(571, 600), new Point(600, 600), MyColor.BLACK);
-        drawArc(mg, new Point(491, 520), new Point(536, 550), new Point(560, 550), new Point(600, 600), MyColor.BLACK);
-        drawArc(mg, new Point(430, 520), new Point(475, 550), new Point(499, 550), new Point(539, 600), MyColor.BLACK);
+        drawLine(mg, new Point(491, 520), new Point(430, 520), MyColor.SCHIAVA_BLUE);
+        drawLine(mg, new Point(571, 600), new Point(600, 600), MyColor.SCHIAVA_BLUE);
+        drawArc(mg, new Point(491, 520), new Point(536, 550), new Point(560, 550), new Point(600, 600), MyColor.SCHIAVA_BLUE);
+        drawArc(mg, new Point(430, 520), new Point(475, 550), new Point(499, 550), new Point(539, 600), MyColor.SCHIAVA_BLUE);
+
 
         // draw barrier
         int[] yPoints = { 340, 340, 340, 340, 340, 340, 340, 341, 341 };
         int xStart = 10;
         int poleWidth = 10;
         for (int i = 0; i < yPoints.length; i++) {
-            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.FRIJID_PINK);
             xStart += poleWidth;
         }
 
@@ -85,7 +88,7 @@ public class NewYear extends JPanel {
         xStart = 105;
         int stepWidth = 15;
         for (int i = 0; i < yPoints.length; i++) {
-            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.FRIJID_PINK);
             xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
         }
 
@@ -93,7 +96,7 @@ public class NewYear extends JPanel {
         xStart = 260;
         stepWidth = 20;
         for (int i = 0; i < yPoints.length; i++) {
-            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.FRIJID_PINK);
             xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
         }
 
@@ -101,7 +104,7 @@ public class NewYear extends JPanel {
         xStart = 400;
         stepWidth = 40;
         for (int i = 0; i < yPoints.length; i++) {
-            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.BLACK);
+            drawLine(mg, new Point(xStart, yPoints[i]), new Point(xStart, yPoints[i] - 50), MyColor.FRIJID_PINK);
             xStart = (i % 2 == 0) ? xStart + poleWidth : xStart + stepWidth;
         }
 
@@ -114,6 +117,15 @@ public class NewYear extends JPanel {
             mainBuffer = floodFill(mainBuffer, new Point(xPoints[i], 335), Color.WHITE, MyColor.SASQUATCH_SOCKS);
         }
         mainBuffer = floodFill(mainBuffer, new Point(555, 350), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+
+        mainBuffer = floodFill(mainBuffer, new Point(5, 285), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(5, 288), Color.WHITE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(5, 341), Color.WHITE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(5, 346), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+
+
+
+
         
 
 
@@ -121,7 +133,7 @@ public class NewYear extends JPanel {
         g.drawImage(mainBuffer, 0, 0, null);
 
         g.setColor(MyColor.RED);
-        g.fillRect(555, 345, 5, 5);
+        g.fillRect(5, 346, 5, 5);
     }
 
     private void plot(Graphics g, int x, int y) {
