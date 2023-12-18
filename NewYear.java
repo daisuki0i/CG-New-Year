@@ -22,12 +22,11 @@ class MyColor extends Color {
 
     public static final Color FERRIS_WHEEL = Color.decode("#AD7A77");
     public static final Color VIVID_VISION = Color.decode("#615063");
-    public static final Color SCHIAVA_BLUE = Color.decode("#193461");
-    public static final Color SASQUATCH_SOCKS = Color.decode("#ff4b7b"); // pink
-    public static final Color ANTARCTIC_BLUE = Color.decode("#2b385e"); 
+    public static final Color ALASKAN_CRUISE = Color.decode("#37466f");
+    public static final Color SASQUATCH_SOCKS = Color.decode("#ff4b7b");
+    public static final Color ANTARCTIC_BLUE = Color.decode("#2b385e");
     public static final Color FRIJID_PINK = Color.decode("#FF8B7F");
-    public static final Color DEEP_WISTERIA = Color.decode("#47416e");
-    public static final Color TEST = Color.decode("#383D66");
+   
 }
 
 public class NewYear extends JPanel {
@@ -47,15 +46,20 @@ public class NewYear extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
-        BufferedImage bgBuffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D bgg = bgBuffer.createGraphics();
-        drawBackground(bgg);
-
-        // g.drawImage(bgBuffer, 0, 0, null);
+        
 
         BufferedImage mainBuffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D mg = mainBuffer.createGraphics();
         drawWhiteBackground(mg);
+
+        int y = 0;
+        for (int i = 0; i < MyColor.BACKGROUND_GRADIENT_COLOR.length; i++) {
+            if (i == MyColor.BACKGROUND_GRADIENT_COLOR.length - 1) {
+                fillRect(mg, 0, y, 600, 600 - y, MyColor.BACKGROUND_GRADIENT_COLOR[i]);
+            }
+            fillRect(mg, 0, y, 600, 40, MyColor.BACKGROUND_GRADIENT_COLOR[i]);
+            y += 40;
+        }
 
         drawArc(mg, new Point(0, 350), new Point(150, 352), new Point(600, 370), new Point(750, 480), MyColor.FRIJID_PINK);
         drawArc(mg, new Point(0, 342), new Point(150, 347), new Point(600, 364), new Point(750, 479), MyColor.FRIJID_PINK);
@@ -70,10 +74,10 @@ public class NewYear extends JPanel {
         drawArc(mg, new Point(1, 400), new Point(55, 415), new Point(66, 415), new Point(120, 440), MyColor.FERRIS_WHEEL);
         drawArc(mg, new Point(40, 400), new Point(95, 415), new Point(106, 415), new Point(159, 440), MyColor.FERRIS_WHEEL);
 
-        drawLine(mg, new Point(491, 520), new Point(430, 520), MyColor.SCHIAVA_BLUE);
-        drawLine(mg, new Point(571, 600), new Point(600, 600), MyColor.SCHIAVA_BLUE);
-        drawArc(mg, new Point(491, 520), new Point(536, 550), new Point(560, 550), new Point(600, 600), MyColor.SCHIAVA_BLUE);
-        drawArc(mg, new Point(430, 520), new Point(475, 550), new Point(499, 550), new Point(539, 600), MyColor.SCHIAVA_BLUE);
+        drawLine(mg, new Point(491, 520), new Point(430, 520), MyColor.ALASKAN_CRUISE);
+        drawLine(mg, new Point(571, 600), new Point(600, 600), MyColor.ALASKAN_CRUISE);
+        drawArc(mg, new Point(491, 520), new Point(536, 550), new Point(560, 550), new Point(600, 600), MyColor.ALASKAN_CRUISE);
+        drawArc(mg, new Point(430, 520), new Point(475, 550), new Point(499, 550), new Point(539, 600), MyColor.ALASKAN_CRUISE);
 
 
         // draw barrier
@@ -110,81 +114,63 @@ public class NewYear extends JPanel {
         }
 
         drawLine(mg, new Point(15, 340), new Point(15, 290), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(13, 330), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(13, 330), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(35, 340), new Point(35, 290), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(33, 330), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(33, 330), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(55, 340), new Point(55, 290), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(53, 330), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(53, 330), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(75, 340), new Point(75, 290), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(73, 330), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(73, 330), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(95, 341), new Point(95, 291), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(93, 331), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(93, 331), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(120, 342), new Point(120, 292), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(118, 332), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(118, 332), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(145, 343), new Point(145, 293), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(143, 333), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(143, 333), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(170, 345), new Point(170, 295), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(168, 335), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(168, 335), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(195, 347), new Point(195, 297), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(193, 337), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(193, 337), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(220, 349), new Point(220, 299), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(218, 339), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(218, 339), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(245, 351), new Point(245, 301), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(243, 341), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(243, 341), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(275, 353), new Point(275, 303), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(273, 343), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(273, 343), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(305, 355), new Point(305, 305), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(303, 345), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(303, 345), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(335, 358), new Point(335, 308), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(333, 348), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(333, 348), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(365, 362), new Point(365, 312), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(363, 352), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(363, 352), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(415, 368), new Point(415, 318), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(413, 358), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(413, 358), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(465, 376), new Point(465, 326), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(463, 366), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(463, 366), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(515, 386), new Point(515, 336), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(513, 376), Color.WHITE, MyColor.DEEP_WISTERIA);
-
+        mainBuffer = floodFill(mainBuffer, new Point(513, 376), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         drawLine(mg, new Point(565, 396), new Point(565, 346), MyColor.BLACK);
-        mainBuffer = floodFill(mainBuffer, new Point(563, 386), Color.WHITE, MyColor.DEEP_WISTERIA);
+        mainBuffer = floodFill(mainBuffer, new Point(563, 386), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
 
 
 
         // color fill
-        mainBuffer = floodFill(mainBuffer, new Point(80, 415), Color.WHITE, MyColor.FERRIS_WHEEL);
-        mainBuffer = floodFill(mainBuffer, new Point(520, 550), Color.WHITE, MyColor.VIVID_VISION);
-        mainBuffer = floodFill(mainBuffer, new Point(300, 400), Color.WHITE, MyColor.TEST);
+        mainBuffer = floodFill(mainBuffer, new Point(80, 415), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.FERRIS_WHEEL); // เส้นถนน 1
+        mainBuffer = floodFill(mainBuffer, new Point(520, 550), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.VIVID_VISION); // เส้นถนน 2
+        mainBuffer = floodFill(mainBuffer, new Point(300, 400), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ALASKAN_CRUISE); // ถนน
 
         int[] xPoints = new int[] { 5, 25, 45, 65, 85, 105, 110, 135, 160, 185, 210, 235, 265, 295, 325, 355, 405, 455, 505};        
         for (int i = 0; i < xPoints.length; i++) {
-            mainBuffer = floodFill(mainBuffer, new Point(xPoints[i], 335), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+            mainBuffer = floodFill(mainBuffer, new Point(xPoints[i], 335), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
         }
-        mainBuffer = floodFill(mainBuffer, new Point(555, 350), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(555, 350), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
 
-        mainBuffer = floodFill(mainBuffer, new Point(5, 285), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(5, 288), Color.WHITE, MyColor.ANTARCTIC_BLUE);
-        mainBuffer = floodFill(mainBuffer, new Point(5, 341), Color.WHITE, MyColor.ANTARCTIC_BLUE);
-        mainBuffer = floodFill(mainBuffer, new Point(5, 346), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(5, 285), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(5, 288), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(5, 341), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(5, 346), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
 
-        g.drawImage(bgBuffer, 0, 0, null);
+
         g.drawImage(mainBuffer, 0, 0, null);
 
         g.setColor(MyColor.RED);
@@ -193,6 +179,12 @@ public class NewYear extends JPanel {
 
     private void plot(Graphics g, int x, int y) {
         g.fillRect(x, y, 1, 1);
+    }
+
+    private void fillRect(Graphics g, int x, int y, int width, int height, Color color) {
+        for (int i = 0; i < height; i++) {
+            drawLine(g, new Point(x, y + i), new Point(x + width, y + i), color);
+        }
     }
 
     private void drawBackground(Graphics g) {
