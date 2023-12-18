@@ -24,6 +24,7 @@ class MyColor extends Color {
     public static final Color VIVID_VISION = Color.decode("#615063");
     public static final Color SCHIAVA_BLUE = Color.decode("#193461");
     public static final Color SASQUATCH_SOCKS = Color.decode("#ff4b7b");
+    public static final Color ANTARCTIC_BLUE = Color.decode("#2b385e");
 
 }
 
@@ -56,7 +57,9 @@ public class NewYear extends JPanel {
 
         drawArc(mg, new Point(0, 350), new Point(150, 352), new Point(600, 370), new Point(750, 480), MyColor.BLACK);
         drawArc(mg, new Point(0, 340), new Point(150, 342), new Point(600, 360), new Point(750, 470), MyColor.BLACK);
+
         drawArc(mg, new Point(0, 290), new Point(150, 292), new Point(600, 310), new Point(750, 420), MyColor.BLACK);
+        drawArc(mg, new Point(0, 287), new Point(150, 292), new Point(600, 287), new Point(750, 420), MyColor.BLACK);
         drawArc(mg, new Point(0, 282), new Point(150, 284), new Point(600, 302), new Point(750, 412), MyColor.BLACK);
 
         drawLine(mg, new Point(1, 400), new Point(40, 400), MyColor.BLACK);
@@ -106,29 +109,10 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(520, 550), Color.WHITE, MyColor.VIVID_VISION);
         mainBuffer = floodFill(mainBuffer, new Point(300, 400), Color.WHITE, MyColor.SCHIAVA_BLUE);
 
-        mainBuffer = floodFill(mainBuffer, new Point(5, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(25, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(45, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(65, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(85, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(105, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-
-        mainBuffer = floodFill(mainBuffer, new Point(110, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(135, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(160, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(185, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(210, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(235, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-
-        mainBuffer = floodFill(mainBuffer, new Point(265, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(295, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(325, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(355, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-
-        mainBuffer = floodFill(mainBuffer, new Point(405, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(455, 330), Color.WHITE, MyColor.SASQUATCH_SOCKS);
-
-        mainBuffer = floodFill(mainBuffer, new Point(505, 350), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        int[] xPoints = new int[] { 5, 25, 45, 65, 85, 105, 110, 135, 160, 185, 210, 235, 265, 295, 325, 355, 405, 455, 505};        
+        for (int i = 0; i < xPoints.length; i++) {
+            mainBuffer = floodFill(mainBuffer, new Point(xPoints[i], 335), Color.WHITE, MyColor.SASQUATCH_SOCKS);
+        }
         mainBuffer = floodFill(mainBuffer, new Point(555, 350), Color.WHITE, MyColor.SASQUATCH_SOCKS);
         
 
@@ -137,7 +121,7 @@ public class NewYear extends JPanel {
         g.drawImage(mainBuffer, 0, 0, null);
 
         g.setColor(MyColor.RED);
-        g.fillRect(5, 330, 5, 5);
+        g.fillRect(555, 345, 5, 5);
     }
 
     private void plot(Graphics g, int x, int y) {
