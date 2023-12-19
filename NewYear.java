@@ -53,7 +53,7 @@ public class NewYear extends JPanel {
         drawBackground(mg);
 
         drawArc(mg, new Point(0, 342), new Point(150, 347), new Point(600, 364), new Point(750, 479),
-                2, MyColor.FRIJID_PINK);
+                 MyColor.FRIJID_PINK);
         drawArc(mg, new Point(0, 340), new Point(150, 342), new Point(600, 360), new Point(750, 470),
                 MyColor.ANTARCTIC_BLUE);
 
@@ -69,6 +69,8 @@ public class NewYear extends JPanel {
         drawBarriers(mg);
 
         drawBarrierShadow(mg);
+
+        // drawCar(mg);
 
          // color fill
         mainBuffer = floodFill(mainBuffer, new Point(13, 330), MyColor.BACKGROUND_GRADIENT_COLOR[6],
@@ -135,10 +137,12 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(5, 346), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.SASQUATCH_SOCKS);
 
+        drawCar(mg);
+
         g.drawImage(mainBuffer, 0, 0, null);
 
         g.setColor(MyColor.RED);
-        g.fillRect(555, 395, 5, 5);
+        g.fillRect(160, 480, 5, 5);
     }
 
     // draw methods
@@ -228,6 +232,24 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(465, 376), new Point(465, 326), MyColor.ANTARCTIC_BLUE);
         drawLine(g, new Point(515, 386), new Point(515, 336), MyColor.ANTARCTIC_BLUE);
         drawLine(g, new Point(565, 396), new Point(565, 346), MyColor.ANTARCTIC_BLUE);
+    }
+
+    private void drawCar(Graphics g) {
+        // draw car
+        drawLine(g,new Point(160, 467), new Point(350, 532), MyColor.RED);
+        drawLine(g,new Point(160, 480), new Point(350, 555), MyColor.RED);
+
+        // backwheel
+        drawArc(g, new Point(285, 528), new Point(283, 538), new Point(280, 558), new Point(290, 568), MyColor.RED);
+        drawArc(g, new Point(290, 568), new Point(295, 583), new Point(315, 565), new Point(317, 550) , MyColor.RED);
+        drawArc(g, new Point(317, 550), new Point(320, 540), new Point(319, 515), new Point(314, 516), MyColor.RED);
+        drawArc(g, new Point(314, 516), new Point(305, 511), new Point(300, 510), new Point(285, 528), MyColor.RED);
+
+        // frontwheel
+        drawArc(g, new Point(160, 480), new Point(159, 470), new Point(158, 455), new Point(155, 452), MyColor.RED);
+        drawArc(g, new Point(155, 452), new Point(147, 447), new Point(130, 457), new Point(133, 480), MyColor.RED);
+        drawArc(g, new Point(133, 480), new Point(134, 483), new Point(132, 493), new Point(155, 491), MyColor.RED);
+        drawArc(g, new Point(155, 491), new Point(160, 490), new Point(160, 480), new Point(159, 470), MyColor.RED);
     }
 
     // algo methods
@@ -389,4 +411,5 @@ public class NewYear extends JPanel {
             i++;
         }
     }
+
 }
