@@ -53,7 +53,7 @@ public class NewYear extends JPanel {
         drawBackground(mg);
 
         drawArc(mg, new Point(0, 342), new Point(150, 347), new Point(600, 364), new Point(750, 479),
-                 MyColor.FRIJID_PINK);
+                MyColor.FRIJID_PINK);
         drawArc(mg, new Point(0, 340), new Point(150, 342), new Point(600, 360), new Point(750, 470),
                 MyColor.ANTARCTIC_BLUE);
 
@@ -72,7 +72,7 @@ public class NewYear extends JPanel {
 
         // drawCar(mg);
 
-         // color fill
+        // color fill
         mainBuffer = floodFill(mainBuffer, new Point(13, 330), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(33, 330), MyColor.BACKGROUND_GRADIENT_COLOR[6],
@@ -142,7 +142,7 @@ public class NewYear extends JPanel {
         g.drawImage(mainBuffer, 0, 0, null);
 
         g.setColor(MyColor.RED);
-        g.fillRect(160, 480, 5, 5);
+        // g.fillRect(280, 529, 5, 5);
     }
 
     // draw methods
@@ -235,13 +235,10 @@ public class NewYear extends JPanel {
     }
 
     private void drawCar(Graphics g) {
-        // draw car
-        drawLine(g,new Point(160, 467), new Point(350, 532), MyColor.RED);
-        drawLine(g,new Point(160, 480), new Point(350, 555), MyColor.RED);
 
         // backwheel
         drawArc(g, new Point(285, 528), new Point(283, 538), new Point(280, 558), new Point(290, 568), MyColor.RED);
-        drawArc(g, new Point(290, 568), new Point(295, 583), new Point(315, 565), new Point(317, 550) , MyColor.RED);
+        drawArc(g, new Point(290, 568), new Point(295, 583), new Point(315, 565), new Point(317, 550), MyColor.RED);
         drawArc(g, new Point(317, 550), new Point(320, 540), new Point(319, 515), new Point(314, 516), MyColor.RED);
         drawArc(g, new Point(314, 516), new Point(305, 511), new Point(300, 510), new Point(285, 528), MyColor.RED);
 
@@ -250,6 +247,45 @@ public class NewYear extends JPanel {
         drawArc(g, new Point(155, 452), new Point(147, 447), new Point(130, 457), new Point(133, 480), MyColor.RED);
         drawArc(g, new Point(133, 480), new Point(134, 483), new Point(132, 493), new Point(155, 491), MyColor.RED);
         drawArc(g, new Point(155, 491), new Point(160, 490), new Point(160, 480), new Point(159, 470), MyColor.RED);
+
+        // body
+        drawLine(g, new Point(175, 452), new Point(335, 508), MyColor.RED); // เส้นตรง1 ก่อนถึงล้อหลัง
+        drawLine(g, new Point(175, 467), new Point(335, 522), MyColor.RED); // เส้นตรง2 ก่อนถึงล้อหลัง
+        drawLine(g, new Point(160, 478), new Point(340, 539), MyColor.RED); // เส้นตรง3 ก่อนถึงล้อหลัง
+        drawLine(g, new Point(155, 485), new Point(350, 555), MyColor.RED); // เส้นตรง4 ก่อนถึงล้อหลัง
+        drawArc(g, new Point(335, 508), new Point(345, 510), new Point(350, 514), new Point(370, 512), 1, MyColor.RED); // เส้นโค้ง1 บริเวณล้อรถ
+        drawArc(g, new Point(335, 522), new Point(345, 524), new Point(350, 528), new Point(370, 526), 1, MyColor.RED); // เส้นโค้ง2 บริเวณล้อรถ
+        drawArc(g, new Point(340, 539), new Point(350, 541), new Point(355, 545), new Point(375, 543), 1, MyColor.RED); // เส้นโค้ง3 บริเวณล้อรถ
+        drawArc(g, new Point(350, 555), new Point(360, 557), new Point(365, 561), new Point(385, 559), MyColor.RED); // เส้นโค้ง4 บริเวณล้อรถ
+        drawLine(g, new Point(370, 512), new Point(505, 500), MyColor.RED);  // เส้นตรง1 หลังล้อหลัง
+        drawLine(g, new Point(370, 526), new Point(510, 515), MyColor.RED); // เส้นตรง2 หลังล้อหลัง
+        drawLine(g, new Point(375, 543), new Point(500, 535), MyColor.RED); // เส้นตรง3 หลังล้อหลัง
+        drawLine(g, new Point(385, 559), new Point(495, 550), MyColor.RED); // เส้นตรง4 หลังล้อหลัง
+        drawArc(g, new Point(505, 500), new Point(508, 490), new Point(508, 485), new Point(515, 515), MyColor.RED); // เส้นโค้งของเส้นที่ 1กับ2 เชื่อมกันตรงท้ายรถ
+        drawArc(g, new Point(500, 535), new Point(520, 525), new Point(515, 515), new Point(510, 515), MyColor.RED); // เส้นโค้งของเส้นที่ 2กับ3 เชื่อมกันตรงท้ายรถ
+        drawLine(g, new Point(495, 550), new Point(510, 530), MyColor.RED); // เส้นตรงของเส้นที่ 3กับ4 เชื่อมกันตรงท้ายรถ
+
+        
+        drawArc(g, new Point(175, 467), new Point(165, 450), new Point(140, 420), new Point(132, 465), MyColor.RED);
+        drawArc(g, new Point(175, 452), new Point(160, 435), new Point(135, 405), new Point(132, 465), MyColor.RED);
+       
+        // drawArc(g, new Point(329, 535), new Point(330, 490), new Point(305, 480), new Point(275, 525), MyColor.RED);
+        // drawArc(g, new Point(323, 535), new Point(330, 500), new Point(305, 490), new Point(280, 525), MyColor.RED);
+        // drawLine(g, new Point(280, 525), new Point(283, 540),  MyColor.RED);
+        // drawLine(g, new Point(323, 535), new Point(320, 545),  MyColor.RED);
+        // drawLine(g, new Point(275, 525), new Point(283, 540),  MyColor.RED);
+        // drawLine(g, new Point(329, 535), new Point(320, 545),  MyColor.RED);
+
+        // drawLine(g, new Point(140, 448), new Point(340, 500), MyColor.RED); // เส้นตรง0.5 ก่อนถึงล้อหลัง
+
+        drawArc(g, new Point(283, 532), new Point(289, 490), new Point(310, 520), new Point(319, 542), 1, MyColor.RED);
+
+
+        
+
+
+        
+
     }
 
     // algo methods
@@ -384,8 +420,10 @@ public class NewYear extends JPanel {
         drawArc(g, p1, p2, p3, p4, 1, color);
     }
 
-    private void drawArc(Graphics g, Point p1, Point p2, Point p3, Point p4, int thickness, Color color) {
-        // markControlPoints(g, p1, p2, p3, p4);
+    private void drawArc(Graphics g, Point p1, Point p2, Point p3, Point p4, int thickness, Color color,
+            boolean debug) {
+        if (debug)
+            markControlPoints(g, p1, p2, p3, p4);
         g.setColor(color);
         int n = 1000;
         for (int i = 0; i <= n; i++) {
@@ -400,6 +438,10 @@ public class NewYear extends JPanel {
                 }
             }
         }
+    }
+
+    private void drawArc(Graphics g, Point p1, Point p2, Point p3, Point p4, int thickness, Color color) {
+        drawArc(g, p1, p2, p3, p4, thickness, color, false);
     }
 
     private void markControlPoints(Graphics g, Point p1, Point p2, Point p3, Point p4) {
