@@ -27,6 +27,9 @@ class MyColor extends Color {
     public static final Color ANTARCTIC_BLUE = Color.decode("#2b385e");
     public static final Color FRIJID_PINK = Color.decode("#FF8B7F");
 
+    public static final Color POST_BLUE = Color.decode("#003445");
+    public static final Color CREAM = Color.decode("#E8917F");
+
 }
 
 public class NewYear extends JPanel {
@@ -138,11 +141,11 @@ public class NewYear extends JPanel {
                 MyColor.SASQUATCH_SOCKS);
 
         drawCar(mg);
+        drawElectricPosts(mg);
 
         g.drawImage(mainBuffer, 0, 0, null);
 
-        g.setColor(MyColor.RED);
-        // g.fillRect(280, 529, 5, 5);
+        plotDebug(g, new Point(160, 285), 2);
     }
 
     // draw methods
@@ -287,6 +290,47 @@ public class NewYear extends JPanel {
         
 
     }
+
+    private void drawElectricPosts(Graphics g) {
+        // 1st post
+        drawLine(g, new Point(460 - 3, 375), new Point(460 - 3, 125), 5, MyColor.CREAM);
+        drawLine(g, new Point(455 - 3, 160), new Point(455 - 3, 140), 15, MyColor.CREAM);
+        drawLine(g, new Point(455 - 3, 250), new Point(455 - 3, 230), 15, MyColor.CREAM);
+        drawLine(g, new Point(460, 375), new Point(460, 125), 5, MyColor.POST_BLUE);
+        drawLine(g, new Point(455, 160), new Point(455, 140), 15, MyColor.POST_BLUE);
+        drawLine(g, new Point(455, 250), new Point(455, 230), 15, MyColor.POST_BLUE);
+        drawLine(g, new Point(460, 122), new Point(530, 122), 3, MyColor.CREAM);
+        drawLine(g, new Point(530, 125), new Point(530, 130), 3, MyColor.CREAM);
+        drawLine(g, new Point(500, 125), new Point(500, 130), 3, MyColor.CREAM);
+
+        // 2nd post
+        drawLine(g, new Point(263 - 2, 292), new Point(263 - 2, 170), 3, MyColor.CREAM);
+        drawLine(g, new Point(260 - 2, 190), new Point(260 - 2, 180), 9, MyColor.CREAM);
+        drawLine(g, new Point(260 - 2, 225), new Point(260 - 2, 220), 12, MyColor.CREAM);
+        drawLine(g, new Point(260 - 2, 272), new Point(260 - 2, 260), 15, MyColor.CREAM);
+        drawLine(g, new Point(263, 292), new Point(263, 170), 3, MyColor.POST_BLUE);
+        drawLine(g, new Point(260, 190), new Point(260, 180), 9, MyColor.POST_BLUE);
+        drawLine(g, new Point(260, 225), new Point(260, 220), 12, MyColor.POST_BLUE);
+        drawLine(g, new Point(260, 272), new Point(260, 260), 15, MyColor.POST_BLUE);
+        drawLine(g, new Point(263, 168), new Point(300, 168), 2, MyColor.CREAM);
+        drawLine(g, new Point(300, 170), new Point(300, 172), 2, MyColor.CREAM);
+        drawLine(g, new Point(280, 170), new Point(280, 172), 2, MyColor.CREAM);
+
+        // 3rd post
+        drawLine(g, new Point(65 - 1, 280), new Point(65 - 1, 200), 2, MyColor.CREAM);
+        drawLine(g, new Point(65, 280), new Point(65, 200), 2, MyColor.POST_BLUE);
+        drawLine(g, new Point(65, 199), new Point(90, 199), 1, MyColor.CREAM);
+        drawLine(g, new Point(90, 200), new Point(90, 202), 1, MyColor.CREAM);
+        drawLine(g, new Point(80, 200), new Point(80, 202), 1, MyColor.CREAM);
+
+        // electric wire
+        drawArc(g, new Point(530, 125), new Point(533, 149), new Point(629, 179), new Point(665, 143), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(300, 170), new Point(380, 210), new Point(480, 160), new Point(530, 125), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(90, 200), new Point(220, 240), new Point(290, 200), new Point(300, 170), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(0, 250), new Point(40, 260), new Point(85, 220), new Point(90, 200), 2, MyColor.POST_BLUE);
+
+    }
+
 
     // algo methods
     private void plot(Graphics g, int x, int y) {
@@ -452,6 +496,11 @@ public class NewYear extends JPanel {
             g.drawChars(("P" + i).toCharArray(), 0, 2, p.x + 5, p.y + 5);
             i++;
         }
+    }
+
+    private void plotDebug(Graphics g, Point p, int size) {
+        g.setColor(MyColor.RED);
+        g.fillRect(p.x, p.y, size, size);
     }
 
 }
