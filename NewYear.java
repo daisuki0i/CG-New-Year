@@ -357,10 +357,10 @@ public class NewYear extends JPanel {
         drawArc(g, new Point(0, 252), new Point(40, 260), new Point(85, 210), new Point(80, 200), 2, MyColor.POST_BLUE);
 
         // electric wire 3
-        drawArc(g, new Point(460, 245), new Point(490, 260), new Point(559, 280), new Point(595, 280), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(460, 245), new Point(490, 260), new Point(559, 280), new Point(600, 280), 2, MyColor.POST_BLUE);
 
         // electric wire 4
-        drawArc(g, new Point(460, 245), new Point(490, 250), new Point(565, 265), new Point(595, 260), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(460, 245), new Point(490, 250), new Point(565, 265), new Point(600, 260), 2, MyColor.POST_BLUE);
         drawArc(g, new Point(265, 225), new Point(290, 240), new Point(365, 280), new Point(460, 245), 2, MyColor.POST_BLUE);
         drawArc(g, new Point(65, 255), new Point(120, 280), new Point(220, 255), new Point(265, 225), 2, MyColor.POST_BLUE);
         drawArc(g, new Point(0, 280), new Point(20, 280), new Point(50, 265), new Point(65, 255), 2, MyColor.POST_BLUE);
