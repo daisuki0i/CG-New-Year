@@ -327,6 +327,27 @@ public class NewYear extends JPanel {
     }
 
     private void drawElectricPosts(Graphics g) {
+        // electric wire 1
+        drawArc(g, new Point(530, 125), new Point(533, 149), new Point(629, 179), new Point(665, 143), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(300, 170), new Point(380, 210), new Point(480, 160), new Point(530, 125), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(90, 200), new Point(220, 240), new Point(290, 200), new Point(300, 170), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(0, 250), new Point(40, 260), new Point(85, 220), new Point(90, 200), 2, MyColor.POST_BLUE);
+
+        // electric wire 2
+        drawArc(g, new Point(500, 125), new Point(503, 149), new Point(599, 179), new Point(635, 160), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(280, 170), new Point(360, 210), new Point(460, 160), new Point(510, 125), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(80, 200), new Point(210, 240), new Point(280, 200), new Point(290, 170), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(0, 252), new Point(40, 260), new Point(85, 210), new Point(80, 200), 2, MyColor.POST_BLUE);
+
+        // electric wire 3
+        drawArc(g, new Point(460, 245), new Point(490, 260), new Point(559, 280), new Point(600, 280), 2, MyColor.POST_BLUE);
+
+        // electric wire 4
+        drawArc(g, new Point(460, 245), new Point(490, 250), new Point(565, 265), new Point(600, 260), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(265, 225), new Point(290, 240), new Point(365, 280), new Point(460, 245), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(65, 255), new Point(120, 280), new Point(220, 255), new Point(265, 225), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(0, 280), new Point(20, 280), new Point(50, 265), new Point(65, 255), 2, MyColor.POST_BLUE);
+
         // 1st post
         drawLine(g, new Point(460 - 3, 375), new Point(460 - 3, 125), 5, MyColor.CREAM);
         drawLine(g, new Point(455 - 3, 160), new Point(455 - 3, 140), 15, MyColor.CREAM);
@@ -357,27 +378,6 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(65, 199), new Point(90, 199), 1, MyColor.CREAM);
         drawLine(g, new Point(90, 200), new Point(90, 202), 1, MyColor.CREAM);
         drawLine(g, new Point(80, 200), new Point(80, 202), 1, MyColor.CREAM);
-
-        // electric wire 1
-        drawArc(g, new Point(530, 125), new Point(533, 149), new Point(629, 179), new Point(665, 143), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(300, 170), new Point(380, 210), new Point(480, 160), new Point(530, 125), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(90, 200), new Point(220, 240), new Point(290, 200), new Point(300, 170), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(0, 250), new Point(40, 260), new Point(85, 220), new Point(90, 200), 2, MyColor.POST_BLUE);
-
-        // electric wire 2
-        drawArc(g, new Point(500, 125), new Point(503, 149), new Point(599, 179), new Point(635, 160), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(280, 170), new Point(360, 210), new Point(460, 160), new Point(510, 125), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(80, 200), new Point(210, 240), new Point(280, 200), new Point(290, 170), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(0, 252), new Point(40, 260), new Point(85, 210), new Point(80, 200), 2, MyColor.POST_BLUE);
-
-        // electric wire 3
-        drawArc(g, new Point(460, 245), new Point(490, 260), new Point(559, 280), new Point(600, 280), 2, MyColor.POST_BLUE);
-
-        // electric wire 4
-        drawArc(g, new Point(460, 245), new Point(490, 250), new Point(565, 265), new Point(600, 260), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(265, 225), new Point(290, 240), new Point(365, 280), new Point(460, 245), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(65, 255), new Point(120, 280), new Point(220, 255), new Point(265, 225), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(0, 280), new Point(20, 280), new Point(50, 265), new Point(65, 255), 2, MyColor.POST_BLUE);
     }
     private BufferedImage drawBuilding(Graphics g, BufferedImage mainBuffer) {
         drawLine(g, new Point(585,180), new Point(600,180), 2,MyColor.POST_BLUE);
