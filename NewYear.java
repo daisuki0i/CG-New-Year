@@ -42,6 +42,7 @@ class MyColor extends Color {
     public static final Color LIMOGES = Color.decode("#26406d");
     public static final Color PASSIONATE_BLUE = Color.decode("#1e3060");
     
+    public static final Color ORANGE = Color.decode("#FF6F60");
 }
 
 public class NewYear extends JPanel {
@@ -191,7 +192,8 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(5, 346), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(591, 411), MyColor.ANTARCTIC_BLUE, MyColor.SASQUATCH_SOCKS);
 
-        drawCar(mg);
+        mainBuffer = drawCar(mg, mainBuffer);
+
         g.drawImage(mainBuffer, 0, 0, null);
 
         plotDebug(g, new Point(322,281), 2);
@@ -319,7 +321,7 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(565, 396), new Point(565, 346), MyColor.ANTARCTIC_BLUE);
     }
 
-    private void drawCar(Graphics g) {
+    private BufferedImage drawCar(Graphics g, BufferedImage mainBuffer) {
 
         // backwheel
         drawArc(g, new Point(285, 528), new Point(283, 538), new Point(280, 558), new Point(290, 568), MyColor.RED);
@@ -381,26 +383,52 @@ public class NewYear extends JPanel {
 
         // ท้ายรถ
         drawLine(g, new Point(360, 470), new Point(507, 460), MyColor.RED);
-        drawLine(g, new Point(420, 475), new Point(450, 473), MyColor.RED);
-        drawArc(g, new Point(420, 475), new Point(418, 477), new Point(416, 477), new Point(415, 480), 1, MyColor.RED);
-        drawLine(g, new Point(415, 480), new Point(415, 490), MyColor.RED);
-        drawArc(g, new Point(415, 490), new Point(416, 493), new Point(419, 493), new Point(420, 495), 1, MyColor.RED);
-        drawLine(g, new Point(420, 495), new Point(450, 493), MyColor.RED);
-        drawArc(g, new Point(450, 493), new Point(453, 490), new Point(454, 490), new Point(455, 487), 1, MyColor.RED);
-        drawLine(g, new Point(455, 477), new Point(455, 487), MyColor.RED);
-        drawArc(g, new Point(455, 477), new Point(453, 476), new Point(452, 474), new Point(450, 473), 1, MyColor.RED);
+        drawLine(g, new Point(420, 475), new Point(450, 473), MyColor.ANTARCTIC_BLUE);
+        drawArc(g, new Point(420, 475), new Point(418, 477), new Point(416, 477), new Point(415, 480), 1, MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(415, 480), new Point(415, 490), MyColor.ANTARCTIC_BLUE);
+        drawArc(g, new Point(415, 490), new Point(416, 493), new Point(419, 493), new Point(420, 495), 1, MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(420, 495), new Point(450, 493), MyColor.ANTARCTIC_BLUE);
+        drawArc(g, new Point(450, 493), new Point(453, 490), new Point(454, 490), new Point(455, 487), 1, MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(455, 477), new Point(455, 487), MyColor.ANTARCTIC_BLUE);
+        drawArc(g, new Point(455, 477), new Point(453, 476), new Point(452, 474), new Point(450, 473), 1, MyColor.ANTARCTIC_BLUE);
 
-        drawLine(g, new Point(360, 480), new Point(393, 478), MyColor.RED);
-        drawArc(g, new Point(393, 478), new Point(397, 480), new Point(398, 480), new Point(400, 482), 1, MyColor.RED);
-        drawLine(g, new Point(400, 482), new Point(400, 493), MyColor.RED);
-        drawArc(g, new Point(400, 493), new Point(398, 496), new Point(397, 496), new Point(393, 498), 1, MyColor.RED);
-        drawLine(g, new Point(360, 500), new Point(393, 498), MyColor.RED);
+        drawLine(g, new Point(360, 480), new Point(393, 478), MyColor.ANTARCTIC_BLUE);
+        drawArc(g, new Point(393, 478), new Point(397, 480), new Point(398, 480), new Point(400, 482), 1, MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(400, 482), new Point(400, 493), MyColor.ANTARCTIC_BLUE);
+        drawArc(g, new Point(400, 493), new Point(398, 496), new Point(397, 496), new Point(393, 498), 1, MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(360, 500), new Point(393, 498), MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(369, 480), new Point(369, 499), MyColor.ORANGE);
 
-        drawLine(g, new Point(474, 472), new Point(507, 470), MyColor.RED);
-        drawArc(g, new Point(474, 472), new Point(472, 473), new Point(470, 473), new Point(467, 476), 1, MyColor.RED);
-        drawLine(g, new Point(467, 476), new Point(467, 489), MyColor.RED);
-        drawArc(g, new Point(467, 489), new Point(468, 492), new Point(470, 493), new Point(474, 492), 1, MyColor.RED);
-        drawLine(g, new Point(474, 492), new Point(507, 490), MyColor.RED);
+        drawLine(g, new Point(474, 472), new Point(508, 470), MyColor.ANTARCTIC_BLUE);
+        drawArc(g, new Point(474, 472), new Point(472, 473), new Point(470, 473), new Point(467, 476), 1, MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(467, 476), new Point(467, 489), MyColor.ANTARCTIC_BLUE);
+        drawArc(g, new Point(467, 489), new Point(468, 492), new Point(470, 493), new Point(474, 492), 1, MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(474, 492), new Point(508, 490), MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(500, 471), new Point(500, 489), MyColor.ORANGE);
+
+        g.setColor(MyColor.ANTARCTIC_BLUE);
+        g.fillPolygon(new int[] {353, 443, 481}, new int[] {393, 389, 435}, 3);
+        g.fillPolygon(new int[] {353, 366, 481}, new int[] {393, 443, 435}, 3);
+        // mainBuffer = floodFill(mainBuffer, new Point(397, 450), MyColor.ALASKAN_CRUISE, MyColor.SASQUATCH_SOCKS);
+
+        // ข้างรถ
+        drawLine(g, new Point(169, 444), new Point(350, 505), MyColor.RED);
+        drawArc(g, new Point(360, 500), new Point(356, 504), new Point(354, 505), new Point(350, 505), 1, MyColor.RED);
+        drawLine(g, new Point(133, 434), new Point(138, 435), MyColor.RED);
+
+        drawLine(g, new Point(325, 495), new Point(325, 480), MyColor.RED);
+        drawLine(g, new Point(325, 480), new Point(346, 486), MyColor.RED);
+        drawLine(g, new Point(346, 486), new Point(346, 503), MyColor.RED);
+
+        mainBuffer = floodFill(mainBuffer, new Point(408, 488), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(338, 504), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(440, 482), MyColor.ALASKAN_CRUISE, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(366, 491), MyColor.ALASKAN_CRUISE, MyColor.ORANGE);
+        mainBuffer = floodFill(mainBuffer, new Point(506, 481), MyColor.ALASKAN_CRUISE, MyColor.ORANGE);
+        mainBuffer = floodFill(mainBuffer, new Point(386, 486), MyColor.ALASKAN_CRUISE, MyColor.CHINESE_NEW_YEAR);
+        mainBuffer = floodFill(mainBuffer, new Point(479, 479), MyColor.ALASKAN_CRUISE, MyColor.CHINESE_NEW_YEAR);
+
+        return mainBuffer;
     }
 
     private void drawElectricPosts(Graphics g) {
@@ -1225,11 +1253,11 @@ public class NewYear extends JPanel {
     }
 
     private void markControlPoints(Graphics g, Point p1, Point p2, Point p3, Point p4) {
-        g.setColor(MyColor.RED);
+        g.setColor(MyColor.BLACK);
         int i = 1;
         for (Point p : new Point[] { p1, p2, p3, p4 }) {
-            g.fillRect(p.x, p.y, 4, 4);
-            g.drawChars(("P" + i).toCharArray(), 0, 2, p.x + 5, p.y + 5);
+            g.fillRect(p.x, p.y, 2, 2);
+        //     g.drawChars(("P" + i).toCharArray(), 0, 2, p.x + 5, p.y + 5);
             i++;
         }
     }
