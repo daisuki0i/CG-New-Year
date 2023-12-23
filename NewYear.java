@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -41,6 +43,13 @@ public class NewYear extends JPanel {
 
     public static void main(String[] args) {
         NewYear n = new NewYear();
+        n.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                int x = e.getX();
+                int y = e.getY();
+                System.out.println("x: " + x + " y: " + y);
+            }
+        });
 
         JFrame f = new JFrame();
         f.add(n);
@@ -55,6 +64,7 @@ public class NewYear extends JPanel {
     public void paintComponent(Graphics g) {
 
         BufferedImage mainBuffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+
         Graphics2D mg = mainBuffer.createGraphics();
 
         drawBackground(mg);
@@ -65,7 +75,6 @@ public class NewYear extends JPanel {
         // drawBarriers(mg);
         // drawBarrierShadow(mg);
         // drawCar(mg);
-        
 
         // color fill
         mainBuffer = floodFill(mainBuffer, new Point(13, 330), MyColor.BACKGROUND_GRADIENT_COLOR[6],
@@ -123,10 +132,14 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(555, 350), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.SASQUATCH_SOCKS);
 
+        // ราวรั้วบน
         mainBuffer = floodFill(mainBuffer, new Point(5, 285), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(5, 288), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.ANTARCTIC_BLUE);
+        // mainBuffer = floodFill(mainBuffer, new Point(450, 322), MyColor.CHINESE_NEW_YEAR,
+        //         MyColor.ANTARCTIC_BLUE);
+        // ราวรั้วล่าง
         mainBuffer = floodFill(mainBuffer, new Point(555, 396), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(5, 346), MyColor.BACKGROUND_GRADIENT_COLOR[6],
@@ -169,9 +182,9 @@ public class NewYear extends JPanel {
         drawArc(g, new Point(430, 520), new Point(475, 550), new Point(499, 550), new Point(539, 600),
                 MyColor.ALASKAN_CRUISE);
 
-        mainBuffer = floodFill(mainBuffer, new Point(450,420), MyColor.CHINESE_NEW_YEAR,
+        mainBuffer = floodFill(mainBuffer, new Point(450, 420), MyColor.CHINESE_NEW_YEAR,
                 MyColor.ALASKAN_CRUISE);
-        mainBuffer = floodFill(mainBuffer, new Point(590,420), MyColor.ANTARCTIC_BLUE ,
+        mainBuffer = floodFill(mainBuffer, new Point(590, 420), MyColor.ANTARCTIC_BLUE,
                 MyColor.ALASKAN_CRUISE);
 
         return mainBuffer;
@@ -408,14 +421,14 @@ public class NewYear extends JPanel {
     }
 
     private BufferedImage drawBuilding(Graphics g, BufferedImage mainBuffer) {
-        drawLine(g, new Point(585,180), new Point(600,180), 2,MyColor.POST_BLUE);
-        drawLine(g, new Point(585,180), new Point(585,430), 2,MyColor.ANTARCTIC_BLUE );
-        drawLine(g, new Point(585,430), new Point(600,430), 2,MyColor.ANTARCTIC_BLUE );
-        drawLine(g, new Point(590,37), new Point(600,37), 2,MyColor.BREONNE_BLUE);
+        drawLine(g, new Point(585, 180), new Point(600, 180), 2, MyColor.POST_BLUE);
+        drawLine(g, new Point(585, 180), new Point(585, 430), 2, MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(585, 430), new Point(600, 430), 2, MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(590, 37), new Point(600, 37), 2, MyColor.BREONNE_BLUE);
         Polygon poly = new Polygon();
-        poly.addPoint(585,183);
-        poly.addPoint(500,37);
-        poly.addPoint(590,37);
+        poly.addPoint(585, 183);
+        poly.addPoint(500, 37);
+        poly.addPoint(590, 37);
         g.fillPolygon(poly);
         drawLine(g, new Point(500,37), new Point(447,48), 2,MyColor.CHINESE_NEW_YEAR);
         drawLine(g, new Point(447,48), new Point(447,430), 2,MyColor.CHINESE_NEW_YEAR);
@@ -443,108 +456,108 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(564,64), new Point(582,88), 2,MyColor.CHINESE_NEW_YEAR);
         drawLine(g, new Point(549,75), new Point(570,75), 4,MyColor.CHINESE_NEW_YEAR);
         // หน้าต่างบานที่2 ขวา
-        drawLine(g, new Point(585,125), new Point(600,125), 3,MyColor.POST_BLUE);
-        drawLine(g, new Point(585,125), new Point(600,159), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(585, 125), new Point(600, 125), 3, MyColor.POST_BLUE);
+        drawLine(g, new Point(585, 125), new Point(600, 159), 2, MyColor.POST_BLUE);
         g.setColor(MyColor.CHINESE_NEW_YEAR);
         Polygon poly1 = new Polygon();
-        poly1.addPoint(580,137);
-        poly1.addPoint(600,137);
-        poly1.addPoint(600,172);
+        poly1.addPoint(580, 137);
+        poly1.addPoint(600, 137);
+        poly1.addPoint(600, 172);
         g.fillPolygon(poly1);
 
         // building
-        mainBuffer = floodFill(mainBuffer, new Point(500,58), MyColor.BACKGROUND_GRADIENT_COLOR[1],
+        mainBuffer = floodFill(mainBuffer, new Point(500, 58), MyColor.BACKGROUND_GRADIENT_COLOR[1],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(595,60), MyColor.BACKGROUND_GRADIENT_COLOR[1],            
+        mainBuffer = floodFill(mainBuffer, new Point(595, 60), MyColor.BACKGROUND_GRADIENT_COLOR[1],
                 MyColor.BREONNE_BLUE);
-        mainBuffer = floodFill(mainBuffer, new Point(595,89), MyColor.BACKGROUND_GRADIENT_COLOR[2],            
+        mainBuffer = floodFill(mainBuffer, new Point(595, 89), MyColor.BACKGROUND_GRADIENT_COLOR[2],
                 MyColor.BREONNE_BLUE);
-        mainBuffer = floodFill(mainBuffer, new Point(500,98), MyColor.BACKGROUND_GRADIENT_COLOR[2],
+        mainBuffer = floodFill(mainBuffer, new Point(500, 98), MyColor.BACKGROUND_GRADIENT_COLOR[2],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(500,118), MyColor.BACKGROUND_GRADIENT_COLOR[2],
+        mainBuffer = floodFill(mainBuffer, new Point(500, 118), MyColor.BACKGROUND_GRADIENT_COLOR[2],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(595,118), MyColor.BACKGROUND_GRADIENT_COLOR[2],
+        mainBuffer = floodFill(mainBuffer, new Point(595, 118), MyColor.BACKGROUND_GRADIENT_COLOR[2],
                 MyColor.BREONNE_BLUE);
-        mainBuffer = floodFill(mainBuffer, new Point(595,122), MyColor.BACKGROUND_GRADIENT_COLOR[3],
+        mainBuffer = floodFill(mainBuffer, new Point(595, 122), MyColor.BACKGROUND_GRADIENT_COLOR[3],
                 MyColor.BREONNE_BLUE);
-        mainBuffer = floodFill(mainBuffer, new Point(500,120), MyColor.BACKGROUND_GRADIENT_COLOR[3],
+        mainBuffer = floodFill(mainBuffer, new Point(500, 120), MyColor.BACKGROUND_GRADIENT_COLOR[3],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(500,138), MyColor.BACKGROUND_GRADIENT_COLOR[3],
+        mainBuffer = floodFill(mainBuffer, new Point(500, 138), MyColor.BACKGROUND_GRADIENT_COLOR[3],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(500,158), MyColor.BACKGROUND_GRADIENT_COLOR[3],
+        mainBuffer = floodFill(mainBuffer, new Point(500, 158), MyColor.BACKGROUND_GRADIENT_COLOR[3],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(500,178), MyColor.BACKGROUND_GRADIENT_COLOR[4],
+        mainBuffer = floodFill(mainBuffer, new Point(500, 178), MyColor.BACKGROUND_GRADIENT_COLOR[4],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(449,161), MyColor.BACKGROUND_GRADIENT_COLOR[4],            
+        mainBuffer = floodFill(mainBuffer, new Point(449, 161), MyColor.BACKGROUND_GRADIENT_COLOR[4],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(449,190), MyColor.BACKGROUND_GRADIENT_COLOR[4],
+        mainBuffer = floodFill(mainBuffer, new Point(449, 190), MyColor.BACKGROUND_GRADIENT_COLOR[4],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(500,195), MyColor.BACKGROUND_GRADIENT_COLOR[4],
+        mainBuffer = floodFill(mainBuffer, new Point(500, 195), MyColor.BACKGROUND_GRADIENT_COLOR[4],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(595,170), MyColor.BACKGROUND_GRADIENT_COLOR[4],
+        mainBuffer = floodFill(mainBuffer, new Point(595, 170), MyColor.BACKGROUND_GRADIENT_COLOR[4],
                 MyColor.BREONNE_BLUE);
-        mainBuffer = floodFill(mainBuffer, new Point(595,197), MyColor.BACKGROUND_GRADIENT_COLOR[4],
-                MyColor.ANTARCTIC_BLUE );
-        mainBuffer = floodFill(mainBuffer, new Point(500,215), MyColor.BACKGROUND_GRADIENT_COLOR[5],
+        mainBuffer = floodFill(mainBuffer, new Point(595, 197), MyColor.BACKGROUND_GRADIENT_COLOR[4],
+                MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(500, 215), MyColor.BACKGROUND_GRADIENT_COLOR[5],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(449,200), MyColor.BACKGROUND_GRADIENT_COLOR[5],
+        mainBuffer = floodFill(mainBuffer, new Point(449, 200), MyColor.BACKGROUND_GRADIENT_COLOR[5],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(595,230), MyColor.BACKGROUND_GRADIENT_COLOR[5],
-                MyColor.ANTARCTIC_BLUE );
-        mainBuffer = floodFill(mainBuffer, new Point(595,240), MyColor.BACKGROUND_GRADIENT_COLOR[6],
-                MyColor.ANTARCTIC_BLUE );
-        mainBuffer = floodFill(mainBuffer, new Point(500,250), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+        mainBuffer = floodFill(mainBuffer, new Point(595, 230), MyColor.BACKGROUND_GRADIENT_COLOR[5],
+                MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(595, 240), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+                MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(500, 250), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(449,240), MyColor.BACKGROUND_GRADIENT_COLOR[6],        
+        mainBuffer = floodFill(mainBuffer, new Point(449, 240), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(449,300), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+        mainBuffer = floodFill(mainBuffer, new Point(449, 300), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(500,320), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+        mainBuffer = floodFill(mainBuffer, new Point(500, 320), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(595,300), MyColor.BACKGROUND_GRADIENT_COLOR[6],
-                MyColor.ANTARCTIC_BLUE );
-        mainBuffer = floodFill(mainBuffer, new Point(595,380), MyColor.BACKGROUND_GRADIENT_COLOR[6],
-                MyColor.ANTARCTIC_BLUE );
-        mainBuffer = floodFill(mainBuffer, new Point(570,380), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+        mainBuffer = floodFill(mainBuffer, new Point(595, 300), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+                MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(595, 380), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+                MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(570, 380), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(530,380), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+        mainBuffer = floodFill(mainBuffer, new Point(530, 380), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(490,380), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+        mainBuffer = floodFill(mainBuffer, new Point(490, 380), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(555,80), MyColor.BREONNE_BLUE,
+        mainBuffer = floodFill(mainBuffer, new Point(555, 80), MyColor.BREONNE_BLUE,
                 MyColor.VIOLET_INDIGO);
-        mainBuffer = floodFill(mainBuffer, new Point(555,70), MyColor.BREONNE_BLUE,
+        mainBuffer = floodFill(mainBuffer, new Point(555, 70), MyColor.BREONNE_BLUE,
                 MyColor.VIOLET_INDIGO);
         // หน้าต่างด้านหน้าชั้น2
-        drawLine(g, new Point(467,210), new Point(467,270), 4,MyColor.SUPERIOR_BLUE);
-        drawLine(g, new Point(571,195), new Point(571,255), 2,MyColor.SUPERIOR_BLUE);
-        drawLine(g, new Point(467,210), new Point(569,195), 4,MyColor.SUPERIOR_BLUE);
-        drawLine(g, new Point(468,270), new Point(569,257), 2,MyColor.SUPERIOR_BLUE);
+        drawLine(g, new Point(467, 210), new Point(467, 270), 4, MyColor.SUPERIOR_BLUE);
+        drawLine(g, new Point(571, 195), new Point(571, 255), 2, MyColor.SUPERIOR_BLUE);
+        drawLine(g, new Point(467, 210), new Point(569, 195), 4, MyColor.SUPERIOR_BLUE);
+        drawLine(g, new Point(468, 270), new Point(569, 257), 2, MyColor.SUPERIOR_BLUE);
         // ด้านในหน้าต่างบาน1
-        drawLine(g, new Point(475,220), new Point(475,260), 4,MyColor.VIOLET_INDIGO);
-        drawLine(g, new Point(500,217), new Point(500,258), 4,MyColor.VIOLET_INDIGO);
-        drawLine(g, new Point(475,220), new Point(500,217), 4,MyColor.VIOLET_INDIGO);
-        drawLine(g, new Point(475,260), new Point(500,257), 4,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(475, 220), new Point(475, 260), 4, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(500, 217), new Point(500, 258), 4, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(475, 220), new Point(500, 217), 4, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(475, 260), new Point(500, 257), 4, MyColor.VIOLET_INDIGO);
         // ด้านในหน้าต่างบาน2
-        drawLine(g, new Point(510,216), new Point(510,255), 4,MyColor.VIOLET_INDIGO);
-        drawLine(g, new Point(535,213), new Point(535,252), 4,MyColor.VIOLET_INDIGO);
-        drawLine(g, new Point(510,216), new Point(535,213), 4,MyColor.VIOLET_INDIGO);
-        drawLine(g, new Point(510,255), new Point(535,252), 4,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(510, 216), new Point(510, 255), 4, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(535, 213), new Point(535, 252), 4, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(510, 216), new Point(535, 213), 4, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(510, 255), new Point(535, 252), 4, MyColor.VIOLET_INDIGO);
         // ด้านในหน้าต่างบาน3
         drawLine(g, new Point(545,210), new Point(545,250), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(565,207), new Point(565,247), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(545,210), new Point(565,207), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(545,250), new Point(565,247), 4,MyColor.VIOLET_INDIGO);
         // หน้าต่างด้านหน้าชั้น3
-        drawLine(g, new Point(466,130), new Point(466,180), 4,MyColor.SUPERIOR_BLUE);
-        drawLine(g, new Point(530,116), new Point(560,170), 2,MyColor.SUPERIOR_BLUE);
-        drawLine(g, new Point(466,130), new Point(530,115), 4,MyColor.SUPERIOR_BLUE);
-        drawLine(g, new Point(467,182), new Point(560,170), 2,MyColor.SUPERIOR_BLUE);
+        drawLine(g, new Point(466, 130), new Point(466, 180), 4, MyColor.SUPERIOR_BLUE);
+        drawLine(g, new Point(530, 116), new Point(560, 170), 2, MyColor.SUPERIOR_BLUE);
+        drawLine(g, new Point(466, 130), new Point(530, 115), 4, MyColor.SUPERIOR_BLUE);
+        drawLine(g, new Point(467, 182), new Point(560, 170), 2, MyColor.SUPERIOR_BLUE);
         // ด้านในหน้าต่างบาน1
-        drawLine(g, new Point(473,138), new Point(473,172), 4,MyColor.VIOLET_INDIGO);
-        drawLine(g, new Point(500,135), new Point(500,169), 4,MyColor.VIOLET_INDIGO);
-        drawLine(g, new Point(473,138), new Point(500,133), 4,MyColor.VIOLET_INDIGO);
-        drawLine(g, new Point(473,172), new Point(500,169), 4,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(473, 138), new Point(473, 172), 4, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(500, 135), new Point(500, 169), 4, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(473, 138), new Point(500, 133), 4, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(473, 172), new Point(500, 169), 4, MyColor.VIOLET_INDIGO);
         // ด้านในหน้าต่างบาน2
         drawLine(g, new Point(509,133), new Point(510,167), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(528,130), new Point(547,164), 4,MyColor.VIOLET_INDIGO);
@@ -572,27 +585,27 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(545,345), new Point(565,343), 4,MyColor.VIOLET_INDIGO);
         mainBuffer = floodFill(mainBuffer, new Point(490,160), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(490,250), MyColor.CHINESE_NEW_YEAR,            
+        mainBuffer = floodFill(mainBuffer, new Point(490, 250), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(490,320), MyColor.CHINESE_NEW_YEAR,            
+        mainBuffer = floodFill(mainBuffer, new Point(490, 320), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(490,340), MyColor.CHINESE_NEW_YEAR,            
+        mainBuffer = floodFill(mainBuffer, new Point(490, 340), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(530,160), MyColor.CHINESE_NEW_YEAR,            
+        mainBuffer = floodFill(mainBuffer, new Point(530, 160), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(530,250), MyColor.CHINESE_NEW_YEAR,            
+        mainBuffer = floodFill(mainBuffer, new Point(530, 250), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(530,320), MyColor.CHINESE_NEW_YEAR,            
+        mainBuffer = floodFill(mainBuffer, new Point(530, 320), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(530,340), MyColor.CHINESE_NEW_YEAR,            
+        mainBuffer = floodFill(mainBuffer, new Point(530, 340), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(560,220), MyColor.CHINESE_NEW_YEAR,            
+        mainBuffer = floodFill(mainBuffer, new Point(560, 220), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(560,320), MyColor.CHINESE_NEW_YEAR,            
+        mainBuffer = floodFill(mainBuffer, new Point(560, 320), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
-        mainBuffer = floodFill(mainBuffer, new Point(590,129), MyColor.BACKGROUND_GRADIENT_COLOR[3],            
+        mainBuffer = floodFill(mainBuffer, new Point(590, 129), MyColor.BACKGROUND_GRADIENT_COLOR[3],
                 MyColor.VIOLET_INDIGO);
-        mainBuffer = floodFill(mainBuffer, new Point(587,155), MyColor.BACKGROUND_GRADIENT_COLOR[3],           
+        mainBuffer = floodFill(mainBuffer, new Point(587, 155), MyColor.BACKGROUND_GRADIENT_COLOR[3],
                 MyColor.BREONNE_BLUE);
         
         // ตึก2
@@ -604,8 +617,6 @@ public class NewYear extends JPanel {
 
         return mainBuffer;
     }
-
-
 
     // algo methods
     private void plot(Graphics g, int x, int y) {
