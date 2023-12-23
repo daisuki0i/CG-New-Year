@@ -33,6 +33,7 @@ class MyColor extends Color {
     public static final Color BREONNE_BLUE = Color.decode("#2e5b80");
     public static final Color VIOLET_INDIGO = Color.decode("#3d2863");
     public static final Color SUPERIOR_BLUE = Color.decode("#3c5c73");
+    public static final Color PRINCE_CHARMING = Color.decode("#cc2179");
 }
 
 public class NewYear extends JPanel {
@@ -59,10 +60,10 @@ public class NewYear extends JPanel {
         drawBackground(mg);
 
         mainBuffer = drawBuilding(mg, mainBuffer);
-        drawElectricPosts(mg);
-        mainBuffer = drawRoad(mg, mainBuffer);
-        drawBarriers(mg);
-        drawBarrierShadow(mg);
+        // drawElectricPosts(mg);
+        // mainBuffer = drawRoad(mg, mainBuffer);
+        // drawBarriers(mg);
+        // drawBarrierShadow(mg);
         // drawCar(mg);
         
 
@@ -132,15 +133,9 @@ public class NewYear extends JPanel {
                 MyColor.SASQUATCH_SOCKS);
 
         drawCar(mg);
-       
-        
-
-
-
         g.drawImage(mainBuffer, 0, 0, null);
 
-        plotDebug(g, new Point(590,420), 2);
-
+        plotDebug(g, new Point(445,80), 2);
     }
 
     // draw methods
@@ -411,6 +406,7 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(90, 200), new Point(90, 202), 1, MyColor.CREAM);
         drawLine(g, new Point(80, 200), new Point(80, 202), 1, MyColor.CREAM);
     }
+
     private BufferedImage drawBuilding(Graphics g, BufferedImage mainBuffer) {
         drawLine(g, new Point(585,180), new Point(600,180), 2,MyColor.POST_BLUE);
         drawLine(g, new Point(585,180), new Point(585,430), 2,MyColor.ANTARCTIC_BLUE );
@@ -429,27 +425,23 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(585,180), new Point(447,197), 2,MyColor.SUPERIOR_BLUE); //
         drawLine(g, new Point(585,265), new Point(447,282), 2,MyColor.SUPERIOR_BLUE);
         drawLine(g, new Point(585,265), new Point(600,265), 2,MyColor.POST_BLUE);
-        
         // รั้วบนตึก
         drawLine(g, new Point(565,22), new Point(600,22), 2,MyColor.POST_BLUE);
         drawLine(g, new Point(565,22), new Point(565,35), 2,MyColor.POST_BLUE);
         drawLine(g, new Point(575,22), new Point(575,35), 2,MyColor.POST_BLUE);
         drawLine(g, new Point(585,22), new Point(585,35), 2,MyColor.POST_BLUE);
         drawLine(g, new Point(595,22), new Point(595,35), 2,MyColor.POST_BLUE);
-
         // เส้นขอบหน้าต่าง
         drawLine(g, new Point(536,60), new Point(565,60), 4,MyColor.POST_BLUE);
         drawLine(g, new Point(553,90), new Point(585,90), 2,MyColor.POST_BLUE);
         drawLine(g, new Point(534,60), new Point(553,90), 2,MyColor.POST_BLUE);
         drawLine(g, new Point(565,60), new Point(585,88), 4,MyColor.POST_BLUE);
-
         // เส้นหน้าต่าง
         drawLine(g, new Point(540,64), new Point(564,64), 2,MyColor.CHINESE_NEW_YEAR);
         drawLine(g, new Point(554,88), new Point(581,88), 2,MyColor.CHINESE_NEW_YEAR);
         drawLine(g, new Point(539,64), new Point(554,88), 2,MyColor.CHINESE_NEW_YEAR);
         drawLine(g, new Point(564,64), new Point(582,88), 2,MyColor.CHINESE_NEW_YEAR);
         drawLine(g, new Point(549,75), new Point(570,75), 4,MyColor.CHINESE_NEW_YEAR);
-
         // หน้าต่างบานที่2 ขวา
         drawLine(g, new Point(585,125), new Point(600,125), 3,MyColor.POST_BLUE);
         drawLine(g, new Point(585,125), new Point(600,159), 2,MyColor.POST_BLUE);
@@ -459,7 +451,6 @@ public class NewYear extends JPanel {
         poly1.addPoint(600,137);
         poly1.addPoint(600,172);
         g.fillPolygon(poly1);
-
 
         // building
         mainBuffer = floodFill(mainBuffer, new Point(500,58), MyColor.BACKGROUND_GRADIENT_COLOR[1],
@@ -524,8 +515,6 @@ public class NewYear extends JPanel {
                 MyColor.VIOLET_INDIGO);
         mainBuffer = floodFill(mainBuffer, new Point(555,70), MyColor.BREONNE_BLUE,
                 MyColor.VIOLET_INDIGO);
-        
-
         // หน้าต่างด้านหน้าชั้น2
         drawLine(g, new Point(467,210), new Point(467,270), 4,MyColor.SUPERIOR_BLUE);
         drawLine(g, new Point(571,195), new Point(571,255), 2,MyColor.SUPERIOR_BLUE);
@@ -546,7 +535,6 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(565,207), new Point(565,247), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(545,210), new Point(565,207), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(545,250), new Point(565,247), 4,MyColor.VIOLET_INDIGO);
-
         // หน้าต่างด้านหน้าชั้น3
         drawLine(g, new Point(466,130), new Point(466,180), 4,MyColor.SUPERIOR_BLUE);
         drawLine(g, new Point(530,116), new Point(560,170), 2,MyColor.SUPERIOR_BLUE);
@@ -562,7 +550,6 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(528,130), new Point(547,164), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(510,133), new Point(526,129), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(510,167), new Point(545,163), 4,MyColor.VIOLET_INDIGO);
-        
         // หน้าต่างด้านหน้าชั้น1
         drawLine(g, new Point(466,300), new Point(466,355), 4,MyColor.SUPERIOR_BLUE);
         drawLine(g, new Point(573,292), new Point(573,353), 2,MyColor.SUPERIOR_BLUE);
@@ -583,7 +570,6 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(565,302), new Point(565,341), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(545,305), new Point(565,302), 4,MyColor.VIOLET_INDIGO);
         drawLine(g, new Point(545,345), new Point(565,343), 4,MyColor.VIOLET_INDIGO);
-
         mainBuffer = floodFill(mainBuffer, new Point(490,160), MyColor.CHINESE_NEW_YEAR,
                 MyColor.CREAM);
         mainBuffer = floodFill(mainBuffer, new Point(490,250), MyColor.CHINESE_NEW_YEAR,            
@@ -609,6 +595,11 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(587,155), MyColor.BACKGROUND_GRADIENT_COLOR[3],           
                 MyColor.BREONNE_BLUE);
         
+        // ตึก2
+        drawLine(g, new Point(445,80), new Point(445,430), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(445,80), new Point(345,83), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(345,83), new Point(345,110), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(345,110), new Point(300,110), 2,MyColor.PRINCE_CHARMING);
         
 
         return mainBuffer;
@@ -786,5 +777,4 @@ public class NewYear extends JPanel {
         g.setColor(MyColor.RED);
         g.fillRect(p.x, p.y, size, size);
     }
-
 }
