@@ -324,28 +324,60 @@ public class NewYear extends JPanel {
         drawArc(g, new Point(505, 450), new Point(510, 460), new Point(510, 470), new Point(510, 495), 1, MyColor.RED);
         drawLine(g, new Point(310, 380), new Point(452, 375), MyColor.RED);
 
+        // ท้ายรถ
+        drawLine(g, new Point(360, 470), new Point(507, 460), MyColor.RED);
+        drawLine(g, new Point(420, 475), new Point(450, 473), MyColor.RED);
+        drawArc(g, new Point(420, 475), new Point(418, 477), new Point(416, 477), new Point(415, 480), 1, MyColor.RED);
+        drawLine(g, new Point(415, 480), new Point(415, 490), MyColor.RED);
+        drawArc(g, new Point(415, 490), new Point(416, 493), new Point(419, 493), new Point(420, 495), 1, MyColor.RED);
+        drawLine(g, new Point(420, 495), new Point(450, 493), MyColor.RED);
+        drawArc(g, new Point(450, 493), new Point(453, 490), new Point(454, 490), new Point(455, 487), 1, MyColor.RED);
+        drawLine(g, new Point(455, 477), new Point(455, 487), MyColor.RED);
+        drawArc(g, new Point(455, 477), new Point(453, 476), new Point(452, 474), new Point(450, 473), 1, MyColor.RED);
+
+        drawLine(g, new Point(360, 480), new Point(393, 478), MyColor.RED);
+        drawArc(g, new Point(393, 478), new Point(397, 480), new Point(398, 480), new Point(400, 482), 1, MyColor.RED);
+        drawLine(g, new Point(400, 482), new Point(400, 493), MyColor.RED);
+        drawArc(g, new Point(400, 493), new Point(398, 496), new Point(397, 496), new Point(393, 498), 1, MyColor.RED);
+        drawLine(g, new Point(360, 500), new Point(393, 498), MyColor.RED);
+
+        drawLine(g, new Point(474, 472), new Point(507, 470), MyColor.RED);
+        drawArc(g, new Point(474, 472), new Point(472, 473), new Point(470, 473), new Point(467, 476), 1, MyColor.RED);
+        drawLine(g, new Point(467, 476), new Point(467, 489), MyColor.RED);
+        drawArc(g, new Point(467, 489), new Point(468, 492), new Point(470, 493), new Point(474, 492), 1, MyColor.RED);
+        drawLine(g, new Point(474, 492), new Point(507, 490), MyColor.RED);
     }
 
     private void drawElectricPosts(Graphics g) {
         // electric wire 1
-        drawArc(g, new Point(530, 125), new Point(533, 149), new Point(629, 179), new Point(665, 143), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(300, 170), new Point(380, 210), new Point(480, 160), new Point(530, 125), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(90, 200), new Point(220, 240), new Point(290, 200), new Point(300, 170), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(530, 125), new Point(533, 149), new Point(629, 179), new Point(665, 143), 2,
+                MyColor.POST_BLUE);
+        drawArc(g, new Point(300, 170), new Point(380, 210), new Point(480, 160), new Point(530, 125), 2,
+                MyColor.POST_BLUE);
+        drawArc(g, new Point(90, 200), new Point(220, 240), new Point(290, 200), new Point(300, 170), 2,
+                MyColor.POST_BLUE);
         drawArc(g, new Point(0, 250), new Point(40, 260), new Point(85, 220), new Point(90, 200), 2, MyColor.POST_BLUE);
 
         // electric wire 2
-        drawArc(g, new Point(500, 125), new Point(503, 149), new Point(599, 179), new Point(635, 160), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(280, 170), new Point(360, 210), new Point(460, 160), new Point(510, 125), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(80, 200), new Point(210, 240), new Point(280, 200), new Point(290, 170), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(500, 125), new Point(503, 149), new Point(599, 179), new Point(635, 160), 2,
+                MyColor.POST_BLUE);
+        drawArc(g, new Point(280, 170), new Point(360, 210), new Point(460, 160), new Point(510, 125), 2,
+                MyColor.POST_BLUE);
+        drawArc(g, new Point(80, 200), new Point(210, 240), new Point(280, 200), new Point(290, 170), 2,
+                MyColor.POST_BLUE);
         drawArc(g, new Point(0, 252), new Point(40, 260), new Point(85, 210), new Point(80, 200), 2, MyColor.POST_BLUE);
 
         // electric wire 3
-        drawArc(g, new Point(460, 245), new Point(490, 260), new Point(559, 280), new Point(600, 280), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(460, 245), new Point(490, 260), new Point(559, 280), new Point(600, 280), 2,
+                MyColor.POST_BLUE);
 
         // electric wire 4
-        drawArc(g, new Point(460, 245), new Point(490, 250), new Point(565, 265), new Point(600, 260), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(265, 225), new Point(290, 240), new Point(365, 280), new Point(460, 245), 2, MyColor.POST_BLUE);
-        drawArc(g, new Point(65, 255), new Point(120, 280), new Point(220, 255), new Point(265, 225), 2, MyColor.POST_BLUE);
+        drawArc(g, new Point(460, 245), new Point(490, 250), new Point(565, 265), new Point(600, 260), 2,
+                MyColor.POST_BLUE);
+        drawArc(g, new Point(265, 225), new Point(290, 240), new Point(365, 280), new Point(460, 245), 2,
+                MyColor.POST_BLUE);
+        drawArc(g, new Point(65, 255), new Point(120, 280), new Point(220, 255), new Point(265, 225), 2,
+                MyColor.POST_BLUE);
         drawArc(g, new Point(0, 280), new Point(20, 280), new Point(50, 265), new Point(65, 255), 2, MyColor.POST_BLUE);
 
         // 1st post
