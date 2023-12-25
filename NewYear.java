@@ -36,6 +36,12 @@ class MyColor extends Color {
     public static final Color VIOLET_INDIGO = Color.decode("#3d2863");
     public static final Color SUPERIOR_BLUE = Color.decode("#3c5c73");
     public static final Color PRINCE_CHARMING = Color.decode("#cc2179");
+    public static final Color AMOR = Color.decode("#eb2d7f");
+    public static final Color STRAWBERRY_FRAPPE = Color.decode("#ff9fa1");
+    public static final Color ROSE_TURKISH_DELIGHT = Color.decode("#dc5279");
+    public static final Color LIMOGES = Color.decode("#26406d");
+    public static final Color PASSIONATE_BLUE = Color.decode("#1e3060");
+    
 }
 
 public class NewYear extends JPanel {
@@ -69,12 +75,17 @@ public class NewYear extends JPanel {
 
         drawBackground(mg);
 
+
+        
         mainBuffer = drawBuilding(mg, mainBuffer);
-        // drawElectricPosts(mg);
-        // mainBuffer = drawRoad(mg, mainBuffer);
-        // drawBarriers(mg);
-        // drawBarrierShadow(mg);
+        drawElectricPosts(mg);
+        mainBuffer = drawRoad(mg, mainBuffer);
+        drawBarriers(mg);
+        drawBarrierShadow(mg);
         // drawCar(mg);
+
+        mainBuffer = floodFill(mainBuffer, new Point(95, 389), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+                MyColor.ALASKAN_CRUISE); // ถนน
 
         // color fill
         mainBuffer = floodFill(mainBuffer, new Point(13, 330), MyColor.BACKGROUND_GRADIENT_COLOR[6],
@@ -120,8 +131,6 @@ public class NewYear extends JPanel {
                 MyColor.FERRIS_WHEEL); // เส้นถนน 1
         mainBuffer = floodFill(mainBuffer, new Point(520, 550), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.VIVID_VISION); // เส้นถนน 2
-        mainBuffer = floodFill(mainBuffer, new Point(300, 400), MyColor.BACKGROUND_GRADIENT_COLOR[6],
-                MyColor.ALASKAN_CRUISE); // ถนน
 
         int[] xPoints = new int[] { 5, 25, 45, 65, 85, 105, 110, 135, 160, 185, 210, 235, 265, 295, 325, 355, 405, 455,
                 505 };
@@ -137,18 +146,18 @@ public class NewYear extends JPanel {
                 MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(5, 288), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.ANTARCTIC_BLUE);
-        // mainBuffer = floodFill(mainBuffer, new Point(450, 322), MyColor.CHINESE_NEW_YEAR,
-        //         MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(450, 322), MyColor.CHINESE_NEW_YEAR,
+                MyColor.ANTARCTIC_BLUE);
         // ราวรั้วล่าง
         mainBuffer = floodFill(mainBuffer, new Point(555, 396), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(5, 346), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.SASQUATCH_SOCKS);
 
-        drawCar(mg);
+        // drawCar(mg);
         g.drawImage(mainBuffer, 0, 0, null);
 
-        plotDebug(g, new Point(445,80), 2);
+        plotDebug(g, new Point(322,281), 2);
     }
 
     // draw methods
@@ -186,7 +195,20 @@ public class NewYear extends JPanel {
                 MyColor.ALASKAN_CRUISE);
         mainBuffer = floodFill(mainBuffer, new Point(590, 420), MyColor.ANTARCTIC_BLUE,
                 MyColor.ALASKAN_CRUISE);
-
+        mainBuffer = floodFill(mainBuffer, new Point(350, 399), MyColor.PRINCE_CHARMING,
+                MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(417, 414), MyColor.PRINCE_CHARMING,
+                MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(291,383), MyColor.LIMOGES,
+                MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(181,379), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+                MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(156,387), MyColor.AMOR,
+                MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(237,377), MyColor.LIMOGES,
+                MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(261,377), MyColor.PRINCE_CHARMING,
+                MyColor.ALASKAN_CRUISE);
         return mainBuffer;
     }
 
@@ -302,18 +324,6 @@ public class NewYear extends JPanel {
 
         drawArc(g, new Point(175, 467), new Point(165, 450), new Point(140, 420), new Point(132, 465), MyColor.RED);
         drawArc(g, new Point(175, 452), new Point(160, 435), new Point(135, 405), new Point(132, 465), MyColor.RED);
-
-        // drawArc(g, new Point(329, 535), new Point(330, 490), new Point(305, 480), new
-        // Point(275, 525), MyColor.RED);
-        // drawArc(g, new Point(323, 535), new Point(330, 500), new Point(305, 490), new
-        // Point(280, 525), MyColor.RED);
-        // drawLine(g, new Point(280, 525), new Point(283, 540), MyColor.RED);
-        // drawLine(g, new Point(323, 535), new Point(320, 545), MyColor.RED);
-        // drawLine(g, new Point(275, 525), new Point(283, 540), MyColor.RED);
-        // drawLine(g, new Point(329, 535), new Point(320, 545), MyColor.RED);
-
-        // drawLine(g, new Point(140, 448), new Point(340, 500), MyColor.RED); //
-        // เส้นตรง0.5 ก่อนถึงล้อหลัง
 
         drawArc(g, new Point(283, 532), new Point(289, 490), new Point(310, 520), new Point(319, 542), 1, MyColor.RED);
 
@@ -610,11 +620,329 @@ public class NewYear extends JPanel {
         
         // ตึก2
         drawLine(g, new Point(445,80), new Point(445,430), 2,MyColor.PRINCE_CHARMING);
-        drawLine(g, new Point(445,80), new Point(345,83), 2,MyColor.PRINCE_CHARMING);
-        drawLine(g, new Point(345,83), new Point(345,110), 2,MyColor.PRINCE_CHARMING);
-        drawLine(g, new Point(345,110), new Point(300,110), 2,MyColor.PRINCE_CHARMING);
-        
+        drawLine(g, new Point(445,80), new Point(370,91), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(370,91), new Point(370,115), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(370,115), new Point(285,126), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(285,126), new Point(290,430), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(290,430), new Point(445,430), 2,MyColor.PRINCE_CHARMING);
+        mainBuffer = floodFill(mainBuffer, new Point(403,99), MyColor.BACKGROUND_GRADIENT_COLOR[2],
+                MyColor.PRINCE_CHARMING);
+        mainBuffer = floodFill(mainBuffer, new Point(407,146), MyColor.BACKGROUND_GRADIENT_COLOR[3],
+                MyColor.PRINCE_CHARMING);
+        mainBuffer = floodFill(mainBuffer, new Point(373,186), MyColor.BACKGROUND_GRADIENT_COLOR[4],
+                MyColor.PRINCE_CHARMING);
+        mainBuffer = floodFill(mainBuffer, new Point(416,222), MyColor.BACKGROUND_GRADIENT_COLOR[5],
+                MyColor.PRINCE_CHARMING);
+        mainBuffer = floodFill(mainBuffer, new Point(347,270), MyColor.BACKGROUND_GRADIENT_COLOR[6],
+                MyColor.PRINCE_CHARMING);
 
+                int startX = 430;
+                int startY = 85;
+                int endY = 370;
+                int rectWidth = 6;
+                int rectHeight = 6;
+                
+                for (int x = startX; x <= 440; x += 10) {
+                    for (int y = startY; y <= endY; y += 10) {
+                        fillRect(g, x, y, rectWidth, rectHeight, MyColor.AMOR);
+                    }
+                }
+
+        drawLine(g, new Point(404,22), new Point(404,84), 4,MyColor.CREAM);
+        drawLine(g, new Point(400,42), new Point(395,42), 4,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,38), new Point(395,48), 4,MyColor.POST_BLUE);
+        drawLine(g, new Point(391,38), new Point(391,48), 4,MyColor.CREAM);
+        drawLine(g, new Point(408,54), new Point(413,54), 4,MyColor.POST_BLUE);
+        drawLine(g, new Point(417,51), new Point(417,59), 4,MyColor.POST_BLUE);
+        drawLine(g, new Point(421,51), new Point(421,59), 4,MyColor.CREAM);
+        drawLine(g, new Point(445,120), new Point(400,125), 3,MyColor.POST_BLUE);
+        drawLine(g, new Point(400,125), new Point(400,90), 3,MyColor.POST_BLUE);
+        drawLine(g, new Point(398,125), new Point(398,90), 3,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(445,123), new Point(400,128), 3,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(381,89), new Point(381,370), 4,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(385,90), new Point(385,370), 3,MyColor.POST_BLUE);
+
+        drawLine(g, new Point(398,145), new Point(422,143) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,151), new Point(422,149) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,151), new Point(401,170) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,147), new Point(395,175) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,170), new Point(422,168) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(422,145), new Point(422,173) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,175), new Point(422,173) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,200), new Point(422,198) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,200), new Point(401,220) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,196), new Point(395,225) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,220), new Point(422,218) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(422,196), new Point(422,224) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,225), new Point(422,223) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,196), new Point(422,194) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,250), new Point(422,248) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,250), new Point(401,270) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,246), new Point(395,275) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,270), new Point(422,268) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(422,246), new Point(422,274) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,275), new Point(422,273) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,246), new Point(422,244) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,300), new Point(422,298) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,300), new Point(401,320) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,296), new Point(395,325) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,320), new Point(422,318) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(422,296), new Point(422,324) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,325), new Point(422,323) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,296), new Point(422,294) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,350), new Point(422,348) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,350), new Point(401,370) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,346), new Point(395,375) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(401,370), new Point(422,368) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(422,346), new Point(422,374) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,375), new Point(422,373) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(395,346), new Point(422,344) ,3,MyColor.POST_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(399,153), MyColor.PRINCE_CHARMING,
+                MyColor.CHINESE_NEW_YEAR);
+        mainBuffer = floodFill(mainBuffer, new Point(412,161), MyColor.PRINCE_CHARMING,
+                MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(400,211), MyColor.PRINCE_CHARMING, MyColor.CHINESE_NEW_YEAR);
+        mainBuffer = floodFill(mainBuffer, new Point(412,211), MyColor.PRINCE_CHARMING, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(400,261), MyColor.PRINCE_CHARMING, MyColor.CHINESE_NEW_YEAR);
+        mainBuffer = floodFill(mainBuffer, new Point(412,261), MyColor.PRINCE_CHARMING, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(400,311), MyColor.PRINCE_CHARMING, MyColor.CHINESE_NEW_YEAR);      
+        mainBuffer = floodFill(mainBuffer, new Point(412,311), MyColor.PRINCE_CHARMING, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(400,361), MyColor.PRINCE_CHARMING, MyColor.CHINESE_NEW_YEAR);
+        mainBuffer = floodFill(mainBuffer, new Point(412,361), MyColor.PRINCE_CHARMING, MyColor.CREAM);
+        drawLine(g, new Point(284,104), new Point(285,159) ,3,MyColor.AMOR);
+        drawLine(g, new Point(284,104), new Point(368,96) ,3,MyColor.AMOR);
+        drawLine(g, new Point(359,154), new Point(359,100) ,3,MyColor.AMOR);
+        drawLine(g, new Point(284,161), new Point(361,154) ,3,MyColor.BREONNE_BLUE);
+        drawLine(g, new Point(361,99), new Point(369,99) ,3,MyColor.BREONNE_BLUE);
+        drawLine(g, new Point(361,99), new Point(361,154) ,3,MyColor.BREONNE_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(322,133), MyColor.PRINCE_CHARMING, MyColor.AMOR);
+        mainBuffer = floodFill(mainBuffer, new Point(293,122), MyColor.BACKGROUND_GRADIENT_COLOR[3], MyColor.AMOR);
+        mainBuffer = floodFill(mainBuffer, new Point(293,117), MyColor.BACKGROUND_GRADIENT_COLOR[2], MyColor.AMOR);
+        // Japanese
+        fillRect(g, 290, 142, 10, 10, MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(296,115), new Point(320,113) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(296,115), new Point(296,120) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(296,121), new Point(306,120) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(306,120), new Point(306,149) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(306,149), new Point(311,149) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(311,149), new Point(320,146) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(320,146), new Point(320,139) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(320,139), new Point(315,139) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point (315,139), new Point(315,142) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(315,142), new Point(311,142) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(311,142), new Point(311,120) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(311,120), new Point(316,120) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(316,120), new Point(320,113) ,2,MyColor.STRAWBERRY_FRAPPE);
+        mainBuffer = floodFill(mainBuffer, new Point(310,121), MyColor.AMOR, MyColor.STRAWBERRY_FRAPPE);
+        mainBuffer = floodFill(mainBuffer, new Point(367,110), MyColor.BACKGROUND_GRADIENT_COLOR[2], MyColor.BREONNE_BLUE);
+        drawLine(g, new Point(327,113), new Point(347,111) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(347,111), new Point(346,143) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(346,143), new Point(335,149) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(335,149), new Point(328,149) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(328,149), new Point(328,138) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(328,138), new Point(334,138) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(334,138), new Point(334,141) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(334,141), new Point(336,141) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(336,141), new Point(341,139) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(341,139), new Point(341,120) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(341,120), new Point(332,120) ,2,MyColor.STRAWBERRY_FRAPPE);
+        drawLine(g, new Point(332,120), new Point(327,113) ,2,MyColor.STRAWBERRY_FRAPPE);
+        mainBuffer = floodFill(mainBuffer, new Point(342,119), MyColor.AMOR, MyColor.STRAWBERRY_FRAPPE);
+
+        // บันได
+        drawLine(g, new Point(286,185), new Point(315,185) ,1,MyColor.AMOR);
+        drawLine(g, new Point(315,185), new Point(315,189) ,1,MyColor.AMOR);
+        drawLine(g, new Point(315,189), new Point(315,192) ,1,MyColor.AMOR);
+        drawLine(g, new Point(315,192), new Point(319,192) ,1,MyColor.AMOR);
+        drawLine(g, new Point(319,192), new Point(319,196) ,1,MyColor.AMOR);
+        drawLine(g, new Point(319,196), new Point(323,196) ,1,MyColor.AMOR);
+        drawLine(g, new Point(323,196), new Point(323,200) ,1,MyColor.AMOR);
+        drawLine(g, new Point(323,200), new Point(327,200) ,1,MyColor.AMOR);
+        drawLine(g, new Point(327,200), new Point(327,204) ,1,MyColor.AMOR);
+        drawLine(g, new Point(327,204), new Point(331,204) ,1,MyColor.AMOR);
+        drawLine(g, new Point(331,204), new Point(331,208) ,1,MyColor.AMOR);
+        drawLine(g, new Point(331,208), new Point(335,208) ,1,MyColor.AMOR);
+        drawLine(g, new Point(335,208), new Point(335,212) ,1,MyColor.AMOR);
+        drawLine(g, new Point(335,212), new Point(339,212) ,1,MyColor.AMOR);
+        drawLine(g, new Point(339,212), new Point(339,216) ,1,MyColor.AMOR);
+        drawLine(g, new Point(339,216), new Point(343,216) ,1,MyColor.AMOR);
+
+        drawLine(g, new Point(315,185), new Point(323,185) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(323,185), new Point(323,189) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(323,189), new Point(329,189) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(329,189), new Point(329,193) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(329,193), new Point(335,193) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(335,193), new Point(335,197) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(335,197), new Point(341,197) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(341,197), new Point(341,201) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(341,201), new Point(347,201) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(347,201), new Point(347,205) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(347,205), new Point(353,205) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(353,205), new Point(353,209) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(353,209), new Point(359,209) ,1,MyColor.LIMOGES);
+        
+        drawLine(g, new Point(346,233), new Point(359,233) ,1,MyColor.LIMOGES);
+        drawLine(g, new Point(360,209), new Point(360,233) ,1,MyColor.LIMOGES);
+
+        drawLine(g, new Point(286,185), new Point(286,207) ,3,MyColor.AMOR);
+        drawLine(g, new Point(286,207), new Point(308,207) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(308,207), new Point(308,211) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(308,211), new Point(312,211) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(312,211), new Point(312,215) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(312,215), new Point(316,215) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(316,215), new Point(316,219) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(316,219), new Point(320,219) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(320,219), new Point(320,223) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(320,223), new Point(324,223) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(324,223), new Point(324,227) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(324,227), new Point(328,227) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(328,227), new Point(328,231) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(328,231), new Point(332,231) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(332,231), new Point(343,231) ,3,MyColor.LIMOGES);
+        drawLine(g, new Point(343,231), new Point(343,216) ,3,MyColor.LIMOGES);
+        mainBuffer = floodFill(mainBuffer, new Point(302,197), MyColor.PRINCE_CHARMING, MyColor.AMOR);
+        drawLine(g, new Point(290,100), new Point(290,91) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(290,91), new Point(277,91) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(277,87), new Point(277,95) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(275,87), new Point(275,95) ,3,MyColor.CREAM);
+        drawLine(g, new Point(321,98), new Point(321,89) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(321,89), new Point(309,89) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(309,85), new Point(309,93) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(307,85), new Point(307,93) ,3,MyColor.CREAM);
+        drawLine(g, new Point(353,95), new Point(353,88) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(353,88), new Point(341,88) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(341,84), new Point(341,92) ,3,MyColor.POST_BLUE);
+        drawLine(g, new Point(339,84), new Point(339,92) ,3,MyColor.CREAM);
+        drawLine(g, new Point(408,22), new Point(408,86) ,3,MyColor.POST_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(344,211), MyColor.PRINCE_CHARMING, MyColor.LIMOGES);
+        // เงาตึก
+        drawLine(g, new Point(363,270), new Point(370,270), 2,MyColor.LIMOGES); 
+        drawLine(g, new Point(370,270), new Point(370,265), 2,MyColor.LIMOGES); 
+        drawLine(g, new Point(370,265), new Point(379,265), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(379,265), new Point(379,280), 2,MyColor.LIMOGES); 
+        drawLine(g, new Point(379,280), new Point(373,280), 2,MyColor.LIMOGES); 
+        drawLine(g, new Point(373,280), new Point(373,284), 2,MyColor.LIMOGES); 
+        drawLine(g, new Point(373,284), new Point(369,284), 2,MyColor.LIMOGES); 
+        drawLine(g, new Point(369,284), new Point(369,288), 2,MyColor.LIMOGES); 
+        drawLine(g, new Point(369,288), new Point(363,288), 2,MyColor.LIMOGES); 
+        drawLine(g, new Point(363,270), new Point(363,288), 2,MyColor.LIMOGES); 
+        mainBuffer = floodFill(mainBuffer, new Point(366,280), MyColor.PRINCE_CHARMING, MyColor.LIMOGES);
+        drawLine(g, new Point(363,320), new Point(363,338), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(363,338), new Point(379,338), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(379,338), new Point(379,320), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(379,320), new Point(363,320), 2,MyColor.LIMOGES);
+        mainBuffer = floodFill(mainBuffer, new Point(366,330), MyColor.PRINCE_CHARMING, MyColor.LIMOGES);
+
+        drawLine(g, new Point(361,157), new Point(361,232) ,2,MyColor.PASSIONATE_BLUE);
+        drawLine(g, new Point(361,157), new Point(375,156) ,2,MyColor.PASSIONATE_BLUE);
+        drawLine(g, new Point(375,156), new Point(375,178) ,2,MyColor.PASSIONATE_BLUE);
+        drawLine(g, new Point(375,178), new Point(367,178) ,2,MyColor.PASSIONATE_BLUE);
+        drawLine(g, new Point(367,178), new Point(367,217) ,2,MyColor.PASSIONATE_BLUE);
+        drawLine(g, new Point(367,217), new Point(375,217) ,2,MyColor.PASSIONATE_BLUE);
+        drawLine(g, new Point(375,217), new Point(375,232) ,2,MyColor.PASSIONATE_BLUE);
+        drawLine(g, new Point(375,232), new Point(361,232) ,2,MyColor.PASSIONATE_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(366,166), MyColor.PRINCE_CHARMING, MyColor.PASSIONATE_BLUE);
+
+        drawLine(g, new Point(352,232), new Point(352,224) ,2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(352,224), new Point(374,224) ,2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(372,224), new Point(372,232) ,2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(357,232), new Point(357,224) ,2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(362,232), new Point(362,224) ,2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(367,232), new Point(367,224) ,2,MyColor.ROSE_TURKISH_DELIGHT);
+
+        drawLine(g, new Point(381,171), new Point(371,171), 3,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(381,221), new Point(371,221), 3,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(381,271), new Point(371,271), 3,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(381,321), new Point(371,321), 3,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(381,174), new Point(371,174), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(381,224), new Point(371,224), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(381,274), new Point(371,274), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(381,324), new Point(371,324), 2,MyColor.POST_BLUE);
+
+        drawLine(g, new Point(361,234), new Point(275,234), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(275,234), new Point(275,390), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(361,234), new Point(361,390), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(361,390), new Point(275,390), 2,MyColor.LIMOGES);
+        mainBuffer = floodFill(mainBuffer, new Point(295,275), MyColor.PRINCE_CHARMING, MyColor.LIMOGES);
+        mainBuffer = floodFill(mainBuffer, new Point(281,261), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.LIMOGES);
+        mainBuffer = floodFill(mainBuffer, new Point(280,239), MyColor.BACKGROUND_GRADIENT_COLOR[5], MyColor.LIMOGES);
+        
+        drawLine(g, new Point(273,234), new Point(250,236), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(273,234), new Point(273,390), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(250,236), new Point(250,390), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(250,390), new Point(273,390), 2,MyColor.PRINCE_CHARMING);
+
+        drawLine(g, new Point(248,245), new Point(228,247), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(248,245), new Point(248,390), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(228,247), new Point(228,390), 2,MyColor.LIMOGES);
+        drawLine(g, new Point(228,390), new Point(248,390), 2,MyColor.LIMOGES);
+
+        drawLine(g, new Point(226,247), new Point(155,251), 2,MyColor.AMOR);
+        drawLine(g, new Point(226,247), new Point(226,390), 2,MyColor.AMOR);
+        drawLine(g, new Point(155,251), new Point(155,390), 2,MyColor.AMOR);
+        drawLine(g, new Point(155,390), new Point(226,390), 2,MyColor.AMOR);
+        
+        mainBuffer = floodFill(mainBuffer, new Point(269,238), MyColor.BACKGROUND_GRADIENT_COLOR[5], MyColor.PRINCE_CHARMING);
+        mainBuffer = floodFill(mainBuffer, new Point(269,250), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.PRINCE_CHARMING);
+        mainBuffer = floodFill(mainBuffer, new Point(238,262), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.LIMOGES);
+        mainBuffer = floodFill(mainBuffer, new Point(188,274), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.AMOR);
+        // ท่อ
+        drawLine(g, new Point(300,260), new Point(379,260), 3,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(300,260), new Point(300,235), 3,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(303,258), new Point(379,258), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(303,258), new Point(303,235), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(290,360), new Point(290,235), 3,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(292,360), new Point(292,235), 2,MyColor.POST_BLUE);
+
+        drawLine(g, new Point(315,270), new Point(332,270), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(332,270), new Point(332,285), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(334,270), new Point(334,285), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(332,285), new Point(315,285), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(315,285), new Point(315,270), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        mainBuffer = floodFill(mainBuffer, new Point(322,281), MyColor.LIMOGES, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(315,310), new Point(332,310), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(332,310), new Point(332,325), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(334,310), new Point(334,325), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(332,325), new Point(315,325), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(315,325), new Point(315,310), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        mainBuffer = floodFill(mainBuffer, new Point(322,321), MyColor.LIMOGES, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(315,350), new Point(332,350), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(332,350), new Point(332,365), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(334,350), new Point(334,365), 2,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(332,365), new Point(315,365), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(315,365), new Point(315,350), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        mainBuffer = floodFill(mainBuffer, new Point(322,361), MyColor.LIMOGES, MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(159,249), new Point(159,239), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(164,249), new Point(164,239), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(169,249), new Point(169,239), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(174,249), new Point(174,239), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(179,249), new Point(179,236), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(159,239), new Point(179,239), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(179,236), new Point(199,236), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(194,236), new Point(194,247), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(189,236), new Point(189,247), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(184,236), new Point(184,247), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(199,233), new Point(199,247), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(199,233), new Point(219,233), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(214,233), new Point(214,247), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(209,233), new Point(209,247), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(204,233), new Point(204,247), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(219,230), new Point(219,247), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(219,230), new Point(248,230), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(243,230), new Point(243,244), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(238,230), new Point(238,244), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(233,230), new Point(233,245), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(228,230), new Point(228,245), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(223,230), new Point(223,245), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(248,225), new Point(248,243), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(248,225), new Point(284,225), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(284,225), new Point(284,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(279,225), new Point(279,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(274,225), new Point(274,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(269,225), new Point(269,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(264,225), new Point(264,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(259,225), new Point(259,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(254,225), new Point(254,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
         return mainBuffer;
     }
 
