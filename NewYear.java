@@ -420,6 +420,22 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(325, 480), new Point(346, 486), MyColor.RED);
         drawLine(g, new Point(346, 486), new Point(346, 503), MyColor.RED);
 
+        //หน้าต่างขวา
+        drawLine(g, new Point(282, 382), new Point(274, 426), MyColor.RED);
+        drawLine(g, new Point(282, 382), new Point(309, 387), MyColor.RED);
+        drawArc(g, new Point(309, 387), new Point(312, 388), new Point(315, 390), new Point(320, 394), 1, MyColor.RED);
+        drawLine(g, new Point(320, 394), new Point(341, 433), MyColor.RED);
+        drawArc(g, new Point(341, 433), new Point(347, 443), new Point(345, 446), new Point(337, 443), 1, MyColor.RED);
+        drawLine(g, new Point(274, 426), new Point(337, 443), MyColor.RED);
+
+        //หน้าต่างซ้าย
+        drawLine(g, new Point(274, 381), new Point(266, 424), MyColor.RED);
+        drawLine(g, new Point(274, 381), new Point(240, 376), MyColor.RED);
+        drawArc(g, new Point(240, 376), new Point(235, 375), new Point(230, 375), new Point(215, 382), 1, MyColor.RED);
+        drawLine(g, new Point(215, 382), new Point(192, 398), MyColor.RED);
+        drawArc(g, new Point(192, 398), new Point(187, 402), new Point(182, 403), new Point(194, 406), 1, MyColor.RED);
+        drawLine(g, new Point(266, 424), new Point(194, 406), MyColor.RED);
+
         mainBuffer = floodFill(mainBuffer, new Point(408, 488), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(338, 504), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(440, 482), MyColor.ALASKAN_CRUISE, MyColor.CREAM);
