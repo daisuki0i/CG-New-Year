@@ -154,7 +154,7 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(5, 346), MyColor.BACKGROUND_GRADIENT_COLOR[6],
                 MyColor.SASQUATCH_SOCKS);
 
-        // drawCar(mg);
+        drawCar(mg);
         g.drawImage(mainBuffer, 0, 0, null);
 
         plotDebug(g, new Point(322,281), 2);
@@ -617,7 +617,20 @@ public class NewYear extends JPanel {
                 MyColor.VIOLET_INDIGO);
         mainBuffer = floodFill(mainBuffer, new Point(587, 155), MyColor.BACKGROUND_GRADIENT_COLOR[3],
                 MyColor.BREONNE_BLUE);
-        
+
+        drawLine(g, new Point(477,42), new Point(477,63), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(479,42), new Point(479,63), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(470,65), new Point(484,61), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(470,65), new Point(470,75), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(484,61), new Point(484,71), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(470,75), new Point(484,71), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        mainBuffer = floodFill(mainBuffer, new Point(478,72), MyColor.CHINESE_NEW_YEAR,
+                MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(479,61), new Point(484,60), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(486,60), new Point(486,71), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(486,71), new Point(471,74), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(455,47), new Point(455,380), 4,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(458,47), new Point(458,380), 2,MyColor.POST_BLUE);
         // ตึก2
         drawLine(g, new Point(445,80), new Point(445,430), 2,MyColor.PRINCE_CHARMING);
         drawLine(g, new Point(445,80), new Point(370,91), 2,MyColor.PRINCE_CHARMING);
@@ -943,6 +956,78 @@ public class NewYear extends JPanel {
         drawLine(g, new Point(264,225), new Point(264,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
         drawLine(g, new Point(259,225), new Point(259,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
         drawLine(g, new Point(254,225), new Point(254,234), 2,MyColor.ROSE_TURKISH_DELIGHT);
+        drawLine(g, new Point(155,280), new Point(161,280), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(163,251), new Point(163,278), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(163,278), new Point(173,278), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(175,250), new Point(175,276), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(175,276), new Point(185,276), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(187,249), new Point(187,274), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(187,274), new Point(197,274), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(199,248), new Point(199,272), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(199,272), new Point(209,272), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(211,247), new Point(211,270), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(211,270), new Point(221,270), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(223,246), new Point(223,268), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(223,268), new Point(248,268), 2,MyColor.POST_BLUE);
+
+        drawLine(g, new Point(155,300), new Point(170,300), 4,MyColor.POST_BLUE);
+        drawLine(g, new Point(170,298), new Point(190,298), 4,MyColor.POST_BLUE);
+        drawLine(g, new Point(190,296), new Point(215,296), 4,MyColor.POST_BLUE);
+        drawLine(g, new Point(215,294), new Point(248,294), 4,MyColor.POST_BLUE);
+        drawLine(g, new Point(155,302), new Point(170,302), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(170,300), new Point(190,300), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(190,298), new Point(215,298), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(215,296), new Point(248,296), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(155,304), new Point(170,304), 2,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(170,302), new Point(190,302), 2,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(190,300), new Point(215,300), 2,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(215,298), new Point(248,298), 2,MyColor.VIOLET_INDIGO);
+        
+        drawLine(g, new Point(155,300), new Point(155,326), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(158,324), new Point(170,324), 3,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(170,322), new Point(190,322), 3,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(190,320), new Point(215,320), 3,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(215,318), new Point(248,318), 3,MyColor.VIOLET_INDIGO);
+        drawLine(g, new Point(155,326), new Point(170,326), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(170,324), new Point(190,324), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(190,322), new Point(215,322), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(215,320), new Point(248,320), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(248,320), new Point(248,298), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(155,328), new Point(170,328), 3,MyColor.POST_BLUE);
+        drawLine(g, new Point(170,326), new Point(190,326), 3,MyColor.POST_BLUE);
+        drawLine(g, new Point(190,324), new Point(215,324), 3,MyColor.POST_BLUE);
+        drawLine(g, new Point(215,322), new Point(248,322), 3,MyColor.POST_BLUE);
+
+        drawLine(g, new Point(170,323), new Point(170,305), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(190,321), new Point(190,303), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(215,319), new Point(215,301), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(248,317), new Point(248,299), 3,MyColor.PRINCE_CHARMING);
+        drawLine(g, new Point(248,298), new Point(248,322), 3,MyColor.VIOLET_INDIGO);
+        mainBuffer = floodFill(mainBuffer, new Point(163,315), MyColor.AMOR, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(183,313), MyColor.AMOR, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(208,311), MyColor.AMOR, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(222,309), MyColor.AMOR, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(237,311), MyColor.LIMOGES, MyColor.CREAM);
+        drawLine(g, new Point(256,248), new Point(269,246), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(257,258), new Point(269,256), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(256,248), new Point(256,258), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(269,246), new Point(269,256), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(256,278), new Point(269,276), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(257,288), new Point(269,286), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(256,278), new Point(256,288), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(269,276), new Point(269,286), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(256,308), new Point(269,306), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(257,318), new Point(269,316), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(256,308), new Point(256,318), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(269,306), new Point(269,316), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(256,338), new Point(269,336), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(257,348), new Point(269,346), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(256,338), new Point(256,348), 2,MyColor.POST_BLUE);
+        drawLine(g, new Point(269,336), new Point(269,346), 2,MyColor.POST_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(264,255), MyColor.PRINCE_CHARMING, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(264,286), MyColor.PRINCE_CHARMING, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(264,314), MyColor.PRINCE_CHARMING, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(264,344), MyColor.PRINCE_CHARMING, MyColor.CREAM);
         return mainBuffer;
     }
 
