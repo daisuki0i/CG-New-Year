@@ -447,11 +447,15 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(506, 481), MyColor.ALASKAN_CRUISE, MyColor.ORANGE);
         mainBuffer = floodFill(mainBuffer, new Point(386, 486), MyColor.ALASKAN_CRUISE, MyColor.CHINESE_NEW_YEAR);
         mainBuffer = floodFill(mainBuffer, new Point(479, 479), MyColor.ALASKAN_CRUISE, MyColor.CHINESE_NEW_YEAR);
-        mainBuffer = floodFill(mainBuffer, new Point(394, 450), MyColor.ALASKAN_CRUISE, MyColor.SASQUATCH_SOCKS);
-        mainBuffer = floodFill(mainBuffer, new Point(324, 456), MyColor.ALASKAN_CRUISE, MyColor.LIGHT_PINK);
+        mainBuffer = floodFill(mainBuffer, new Point(394, 450), MyColor.ALASKAN_CRUISE, MyColor.LIGHT_PINK);
+        mainBuffer = floodFill(mainBuffer, new Point(444, 384), MyColor.FRIJID_PINK, MyColor.LIGHT_PINK);
+        mainBuffer = floodFill(mainBuffer, new Point(440, 381), MyColor.SASQUATCH_SOCKS, MyColor.LIGHT_PINK);
+        mainBuffer = floodFill(mainBuffer, new Point(452, 382), MyColor.CHINESE_NEW_YEAR, MyColor.LIGHT_PINK);
+        mainBuffer = floodFill(mainBuffer, new Point(324, 456), MyColor.ALASKAN_CRUISE, MyColor.CREAM);
         mainBuffer = floodFill(mainBuffer, new Point(136, 431), MyColor.FERRIS_WHEEL, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(236, 396), MyColor.ALASKAN_CRUISE, MyColor.LIGHT_PURPLE);
         mainBuffer = floodFill(mainBuffer, new Point(304, 409), MyColor.ALASKAN_CRUISE, MyColor.LIGHT_PURPLE);
+        mainBuffer = floodFill(mainBuffer, new Point(337, 492), MyColor.ALASKAN_CRUISE, MyColor.LIGHT_PINK);
 
         return mainBuffer;
     }
