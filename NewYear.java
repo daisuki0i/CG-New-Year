@@ -45,6 +45,9 @@ class MyColor extends Color {
     public static final Color ORANGE = Color.decode("#FF6F60");
     public static final Color LIGHT_PINK = Color.decode("#FF6286");
     public static final Color LIGHT_PURPLE = Color.decode("#694D7B");
+    public static final Color LIGHT_SHADOW = Color.decode("#26406D");
+    public static final Color REAL_SHADOW = Color.decode("#192B49");
+    public static final Color DAZZLED_BLUE = Color.decode("#355895");
 }
 
 public class NewYear extends JPanel {
@@ -324,49 +327,48 @@ public class NewYear extends JPanel {
     }
 
     private BufferedImage drawCar(Graphics g, BufferedImage mainBuffer) {
-
-        // backwheel
-        drawArc(g, new Point(285, 528), new Point(283, 538), new Point(280, 558), new Point(290, 568), MyColor.RED);
-        drawArc(g, new Point(290, 568), new Point(295, 583), new Point(315, 565), new Point(317, 550), MyColor.RED);
-        drawArc(g, new Point(317, 550), new Point(320, 540), new Point(319, 515), new Point(314, 516), MyColor.RED);
-        drawArc(g, new Point(314, 516), new Point(305, 511), new Point(300, 510), new Point(285, 528), MyColor.RED);
-
         // frontwheel
-        drawArc(g, new Point(160, 480), new Point(159, 470), new Point(158, 455), new Point(155, 452), MyColor.RED);
-        drawArc(g, new Point(155, 452), new Point(147, 447), new Point(130, 457), new Point(133, 480), MyColor.RED);
-        drawArc(g, new Point(133, 480), new Point(134, 483), new Point(132, 493), new Point(155, 491), MyColor.RED);
-        drawArc(g, new Point(155, 491), new Point(160, 490), new Point(160, 480), new Point(159, 470), MyColor.RED);
+        drawArc(g, new Point(160, 480), new Point(159, 470), new Point(158, 455), new Point(155, 452), MyColor.REAL_SHADOW);
+        drawArc(g, new Point(155, 452), new Point(147, 447), new Point(130, 457), new Point(133, 480), MyColor.REAL_SHADOW);
+        drawArc(g, new Point(133, 480), new Point(134, 483), new Point(132, 493), new Point(155, 491), MyColor.REAL_SHADOW);
+        drawArc(g, new Point(155, 491), new Point(160, 490), new Point(160, 480), new Point(159, 470), MyColor.REAL_SHADOW);
 
         // body
-        drawLine(g, new Point(175, 452), new Point(335, 508), MyColor.RED); // เส้นตรง1 ก่อนถึงล้อหลัง
-        drawLine(g, new Point(175, 467), new Point(335, 522), MyColor.RED); // เส้นตรง2 ก่อนถึงล้อหลัง
-        drawLine(g, new Point(160, 478), new Point(340, 539), MyColor.RED); // เส้นตรง3 ก่อนถึงล้อหลัง
-        drawLine(g, new Point(155, 485), new Point(350, 555), MyColor.RED); // เส้นตรง4 ก่อนถึงล้อหลัง
-        drawArc(g, new Point(335, 508), new Point(345, 510), new Point(350, 514), new Point(370, 512), 1, MyColor.RED); // เส้นโค้ง1
+        drawLine(g, new Point(175, 452), new Point(335, 508), MyColor.ANTARCTIC_BLUE); // เส้นตรง1 ก่อนถึงล้อหลัง
+        drawLine(g, new Point(175, 467), new Point(335, 522), MyColor.ANTARCTIC_BLUE); // เส้นตรง2 ก่อนถึงล้อหลัง
+        drawLine(g, new Point(160, 478), new Point(340, 539), MyColor.DAZZLED_BLUE); // เส้นตรง3 ก่อนถึงล้อหลัง
+        drawLine(g, new Point(159, 485), new Point(350, 555), MyColor.DAZZLED_BLUE); // เส้นตรง4 ก่อนถึงล้อหลัง
+        drawArc(g, new Point(335, 508), new Point(345, 510), new Point(350, 514), new Point(370, 512), 1, MyColor.ANTARCTIC_BLUE); // เส้นโค้ง1
                                                                                                                         // บริเวณล้อรถ
-        drawArc(g, new Point(335, 522), new Point(345, 524), new Point(350, 528), new Point(370, 526), 1, MyColor.RED); // เส้นโค้ง2
+        drawArc(g, new Point(335, 522), new Point(345, 524), new Point(350, 528), new Point(370, 526), 1, MyColor.ANTARCTIC_BLUE); // เส้นโค้ง2
                                                                                                                         // บริเวณล้อรถ
-        drawArc(g, new Point(340, 539), new Point(350, 541), new Point(355, 545), new Point(375, 543), 1, MyColor.RED); // เส้นโค้ง3
+        drawArc(g, new Point(340, 539), new Point(350, 541), new Point(355, 545), new Point(375, 543), 1, MyColor.DAZZLED_BLUE); // เส้นโค้ง3
                                                                                                                         // บริเวณล้อรถ
-        drawArc(g, new Point(350, 555), new Point(360, 557), new Point(365, 561), new Point(385, 559), MyColor.RED); // เส้นโค้ง4
+        drawArc(g, new Point(350, 555), new Point(360, 557), new Point(365, 561), new Point(385, 559), MyColor.DAZZLED_BLUE); // เส้นโค้ง4
                                                                                                                      // บริเวณล้อรถ
-        drawLine(g, new Point(370, 512), new Point(505, 500), MyColor.RED); // เส้นตรง1 หลังล้อหลัง
-        drawLine(g, new Point(370, 526), new Point(510, 515), MyColor.RED); // เส้นตรง2 หลังล้อหลัง
-        drawLine(g, new Point(375, 543), new Point(500, 535), MyColor.RED); // เส้นตรง3 หลังล้อหลัง
-        drawLine(g, new Point(385, 559), new Point(495, 550), MyColor.RED); // เส้นตรง4 หลังล้อหลัง
-        drawArc(g, new Point(505, 500), new Point(508, 490), new Point(508, 485), new Point(514, 517), MyColor.RED); // เส้นโค้งของเส้นที่
+        drawLine(g, new Point(370, 512), new Point(505, 500), MyColor.ANTARCTIC_BLUE); // เส้นตรง1 หลังล้อหลัง
+        drawLine(g, new Point(370, 526), new Point(510, 515), MyColor.ANTARCTIC_BLUE); // เส้นตรง2 หลังล้อหลัง
+        drawLine(g, new Point(375, 543), new Point(500, 535), MyColor.DAZZLED_BLUE); // เส้นตรง3 หลังล้อหลัง
+        drawLine(g, new Point(385, 559), new Point(495, 550), MyColor.DAZZLED_BLUE); // เส้นตรง4 หลังล้อหลัง
+        drawArc(g, new Point(505, 500), new Point(508, 490), new Point(508, 485), new Point(514, 517), MyColor.ANTARCTIC_BLUE); // เส้นโค้งของเส้นที่
                                                                                                                      // 1กับ2
                                                                                                                      // เชื่อมกันตรงท้ายรถ
-        drawArc(g, new Point(500, 535), new Point(520, 525), new Point(515, 515), new Point(510, 515), MyColor.RED); // เส้นโค้งของเส้นที่
+        drawArc(g, new Point(500, 535), new Point(520, 525), new Point(515, 515), new Point(510, 515), MyColor.DAZZLED_BLUE); // เส้นโค้งของเส้นที่
                                                                                                                      // 2กับ3
                                                                                                                      // เชื่อมกันตรงท้ายรถ
-        drawLine(g, new Point(495, 550), new Point(510, 529), MyColor.RED); // เส้นตรงของเส้นที่ 3กับ4
+        drawLine(g, new Point(495, 550), new Point(510, 529), MyColor.DAZZLED_BLUE); // เส้นตรงของเส้นที่ 3กับ4
                                                                             // เชื่อมกันตรงท้ายรถ
 
-        drawArc(g, new Point(175, 467), new Point(165, 450), new Point(140, 420), new Point(132, 465), MyColor.RED);
-        drawArc(g, new Point(175, 452), new Point(160, 435), new Point(135, 405), new Point(132, 465), MyColor.RED);
+        drawArc(g, new Point(175, 467), new Point(165, 450), new Point(140, 420), new Point(132, 465), MyColor.ANTARCTIC_BLUE);
+        drawArc(g, new Point(175, 452), new Point(160, 435), new Point(135, 405), new Point(132, 465), MyColor.ANTARCTIC_BLUE);
 
-        drawArc(g, new Point(283, 532), new Point(289, 490), new Point(310, 520), new Point(319, 542), 1, MyColor.RED);
+
+        // backwheel
+        drawArc(g, new Point(285, 528), new Point(283, 538), new Point(280, 558), new Point(290, 568), MyColor.REAL_SHADOW);
+        drawArc(g, new Point(290, 568), new Point(295, 583), new Point(315, 565), new Point(315, 550), MyColor.REAL_SHADOW);
+        // drawArc(g, new Point(317, 550), new Point(320, 540), new Point(319, 515), new Point(314, 516), MyColor.REAL_SHADOW);
+        // drawArc(g, new Point(314, 516), new Point(305, 511), new Point(300, 510), new Point(285, 528), MyColor.REAL_SHADOW);
+        drawArc(g, new Point(283, 532), new Point(289, 490), new Point(310, 520), new Point(315, 550), 1, MyColor.REAL_SHADOW);
 
         // car structure
         drawLine(g, new Point(132, 450), new Point(132, 420), MyColor.RED);
@@ -411,7 +413,6 @@ public class NewYear extends JPanel {
         g.setColor(MyColor.ANTARCTIC_BLUE);
         g.fillPolygon(new int[] {353, 443, 481}, new int[] {393, 389, 435}, 3);
         g.fillPolygon(new int[] {353, 366, 481}, new int[] {393, 443, 435}, 3);
-        // mainBuffer = floodFill(mainBuffer, new Point(397, 450), MyColor.ALASKAN_CRUISE, MyColor.SASQUATCH_SOCKS);
 
         // ข้างรถ
         drawLine(g, new Point(169, 444), new Point(350, 505), MyColor.ANTARCTIC_BLUE);
@@ -441,9 +442,15 @@ public class NewYear extends JPanel {
         drawArc(g, new Point(185, 403), new Point(181, 412), new Point(177, 434), new Point(178, 447), 1, MyColor.ANTARCTIC_BLUE);
         
         // ใต้รถ
-        drawLine(g, new Point(360, 512), new Point(358, 526), MyColor.RED);
-        drawLine(g, new Point(358, 526), new Point(356, 542), MyColor.RED);
-        drawLine(g, new Point(356, 542), new Point(356, 557), MyColor.RED);
+        drawLine(g, new Point(360, 513), new Point(358, 526), MyColor.LIGHT_PINK);
+        drawLine(g, new Point(358, 526), new Point(356, 541), MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(356, 544), new Point(356, 555), MyColor.ANTARCTIC_BLUE);
+        drawLine(g, new Point(177, 453), new Point(176, 466), MyColor.ANTARCTIC_BLUE);
+
+        // เงา
+        drawLine(g, new Point(515, 522), new Point(600, 559), MyColor.REAL_SHADOW);
+        drawLine(g, new Point(138, 490), new Point(282, 552), MyColor.REAL_SHADOW);
+        drawLine(g, new Point(310, 565), new Point(392, 600), MyColor.REAL_SHADOW);
 
         mainBuffer = floodFill(mainBuffer, new Point(408, 488), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(338, 504), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
@@ -468,6 +475,29 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(505, 523), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(469, 531), MyColor.VIVID_VISION, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(488, 541), MyColor.VIVID_VISION, MyColor.ANTARCTIC_BLUE);
+
+        mainBuffer = floodFill(mainBuffer, new Point(274, 494), MyColor.ALASKAN_CRUISE, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(134, 438), MyColor.FERRIS_WHEEL, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(133, 442), MyColor.ALASKAN_CRUISE, MyColor.CREAM);
+        mainBuffer = floodFill(mainBuffer, new Point(173, 457), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(144, 438), MyColor.FERRIS_WHEEL, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(138, 443), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(133, 455), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(245, 499), MyColor.ALASKAN_CRUISE, MyColor.LIGHT_SHADOW);
+        mainBuffer = floodFill(mainBuffer, new Point(334, 540), MyColor.ALASKAN_CRUISE, MyColor.LIGHT_SHADOW);
+        mainBuffer = floodFill(mainBuffer, new Point(266, 520), MyColor.ALASKAN_CRUISE, MyColor.LIGHT_SHADOW);
+
+        mainBuffer = floodFill(mainBuffer, new Point(403, 584), MyColor.ALASKAN_CRUISE, MyColor.REAL_SHADOW);
+        mainBuffer = floodFill(mainBuffer, new Point(564, 554), MyColor.ALASKAN_CRUISE, MyColor.REAL_SHADOW);
+        mainBuffer = floodFill(mainBuffer, new Point(268, 537), MyColor.ALASKAN_CRUISE, MyColor.REAL_SHADOW);
+
+        mainBuffer = floodFill(mainBuffer, new Point(148, 473), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(301, 553), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(299, 530), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(295, 519), MyColor.ALASKAN_CRUISE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(297, 532), MyColor.ANTARCTIC_BLUE, MyColor.DAZZLED_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(297, 532), MyColor.DAZZLED_BLUE, MyColor.ANTARCTIC_BLUE);
+        
 
         return mainBuffer;
     }
