@@ -149,6 +149,13 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(559, 351), MyColor.CHINESE_NEW_YEAR, MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(563, 351), MyColor.CHINESE_NEW_YEAR, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(556, 347), MyColor.VIOLET_INDIGO, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(455, 338), MyColor.ROSE_TURKISH_DELIGHT, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(455, 324), MyColor.ROSE_TURKISH_DELIGHT, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(455, 319), MyColor.ROSE_TURKISH_DELIGHT, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(455, 379), MyColor.ROSE_TURKISH_DELIGHT, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(455, 383), MyColor.ROSE_TURKISH_DELIGHT, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(458, 378), MyColor.CREAM, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(462, 379), MyColor.POST_BLUE, MyColor.ANTARCTIC_BLUE);
 
         // ราวรั้วบน
         mainBuffer = floodFill(mainBuffer, new Point(5, 285), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
@@ -193,15 +200,16 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(555, 396), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(478, 382), MyColor.CHINESE_NEW_YEAR, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(427, 374), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(449, 378), MyColor.CHINESE_NEW_YEAR, MyColor.ANTARCTIC_BLUE);
 
         mainBuffer = floodFill(mainBuffer, new Point(5, 346), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(591, 411), MyColor.ANTARCTIC_BLUE, MyColor.SASQUATCH_SOCKS);
 
-        mainBuffer = drawCar(mg, mainBuffer);
+        // mainBuffer = drawCar(mg, mainBuffer);
 
         g.drawImage(mainBuffer, 0, 0, null);
 
-        plotDebug(g, new Point(322,281), 2);
+        plotDebug(g, new Point(455, 338), 2);
     }
 
     // draw methods
