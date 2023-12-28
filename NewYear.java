@@ -210,6 +210,56 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(267, 305), MyColor.PRINCE_CHARMING, MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(273, 305), MyColor.PRINCE_CHARMING, MyColor.ANTARCTIC_BLUE);
 
+        // สีรั้วที่โดนตึก 4 ทับ
+        mainBuffer = floodFill(mainBuffer, new Point(236, 345), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(236, 314), MyColor.POST_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(236, 312), MyColor.PRINCE_CHARMING, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(236, 310), MyColor.VIOLET_INDIGO, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(236, 305), MyColor.CREAM, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(244, 345), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(244, 314), MyColor.POST_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(244, 312), MyColor.PRINCE_CHARMING, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(244, 310), MyColor.VIOLET_INDIGO, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(244, 305), MyColor.CREAM, MyColor.ANTARCTIC_BLUE);
+
+        mainBuffer = floodFill(mainBuffer, new Point(212, 330), MyColor.AMOR, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(212, 316), MyColor.POST_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(212, 314), MyColor.PRINCE_CHARMING, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(212, 312), MyColor.VIOLET_INDIGO, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(212, 305), MyColor.CREAM, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(219, 330), MyColor.AMOR, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(219, 314), MyColor.POST_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(219, 312), MyColor.PRINCE_CHARMING, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(219, 310), MyColor.VIOLET_INDIGO, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(219, 305), MyColor.CREAM, MyColor.ANTARCTIC_BLUE);
+
+        mainBuffer = floodFill(mainBuffer, new Point(187, 333), MyColor.AMOR, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(187, 318), MyColor.POST_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(187, 316), MyColor.PRINCE_CHARMING, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(187, 314), MyColor.VIOLET_INDIGO, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(187, 305), MyColor.CREAM, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(194, 333), MyColor.AMOR, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(194, 316), MyColor.POST_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(194, 314), MyColor.PRINCE_CHARMING, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(194, 312), MyColor.VIOLET_INDIGO, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(194, 305), MyColor.CREAM, MyColor.ANTARCTIC_BLUE);
+
+        mainBuffer = floodFill(mainBuffer, new Point(161, 333), MyColor.AMOR, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(161, 320), MyColor.POST_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(161, 318), MyColor.AMOR, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(161, 317), MyColor.PRINCE_CHARMING, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(161, 315), MyColor.VIOLET_INDIGO, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(161, 305), MyColor.CREAM, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(161, 299), MyColor.VIOLET_INDIGO, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(161, 296), MyColor.PRINCE_CHARMING, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(168, 333), MyColor.AMOR, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(168, 320), MyColor.POST_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(168, 318), MyColor.AMOR, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(168, 317), MyColor.PRINCE_CHARMING, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(168, 315), MyColor.VIOLET_INDIGO, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(168, 305), MyColor.CREAM, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(168, 299), MyColor.VIOLET_INDIGO, MyColor.ANTARCTIC_BLUE);
+
         // ราวรั้วบน
         mainBuffer = floodFill(mainBuffer, new Point(5, 285), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(458, 320), MyColor.CREAM, MyColor.SASQUATCH_SOCKS);
