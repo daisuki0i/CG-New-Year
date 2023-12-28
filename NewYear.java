@@ -258,7 +258,7 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(5, 346), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(591, 411), MyColor.ANTARCTIC_BLUE, MyColor.SASQUATCH_SOCKS);
 
-        mainBuffer = drawCar(mg, mainBuffer);
+        // mainBuffer = drawCar(mg, mainBuffer);
 
         drawStar(mg);
         g.drawImage(mainBuffer, 0, 0, null);
@@ -297,24 +297,18 @@ public class NewYear extends JPanel {
         drawArc(g, new Point(430, 520), new Point(475, 550), new Point(499, 550), new Point(539, 600),
                 MyColor.ALASKAN_CRUISE);
 
-        mainBuffer = floodFill(mainBuffer, new Point(450, 420), MyColor.CHINESE_NEW_YEAR,
-                MyColor.ALASKAN_CRUISE);
-        mainBuffer = floodFill(mainBuffer, new Point(590, 420), MyColor.ANTARCTIC_BLUE,
-                MyColor.ALASKAN_CRUISE);
-        mainBuffer = floodFill(mainBuffer, new Point(350, 399), MyColor.PRINCE_CHARMING,
-                MyColor.ALASKAN_CRUISE);
-        mainBuffer = floodFill(mainBuffer, new Point(417, 414), MyColor.PRINCE_CHARMING,
-                MyColor.ALASKAN_CRUISE);
-        mainBuffer = floodFill(mainBuffer, new Point(291,383), MyColor.LIMOGES,
-                MyColor.ALASKAN_CRUISE);
-        mainBuffer = floodFill(mainBuffer, new Point(181,379), MyColor.BACKGROUND_GRADIENT_COLOR[6],
-                MyColor.ALASKAN_CRUISE);
-        mainBuffer = floodFill(mainBuffer, new Point(156,387), MyColor.AMOR,
-                MyColor.ALASKAN_CRUISE);
-        mainBuffer = floodFill(mainBuffer, new Point(237,377), MyColor.LIMOGES,
-                MyColor.ALASKAN_CRUISE);
-        mainBuffer = floodFill(mainBuffer, new Point(261,377), MyColor.PRINCE_CHARMING,
-                MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(450, 420), MyColor.CHINESE_NEW_YEAR, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(590, 420), MyColor.ANTARCTIC_BLUE, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(350, 399), MyColor.PRINCE_CHARMING, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(417, 414), MyColor.PRINCE_CHARMING, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(291, 383), MyColor.LIMOGES, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(181, 379), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(156, 387), MyColor.AMOR, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(237, 377), MyColor.LIMOGES, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(261, 377), MyColor.PRINCE_CHARMING, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(15, 362), MyColor.LIMOGES, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(38, 362), MyColor.PASSIONATE_BLUE, MyColor.ALASKAN_CRUISE);
+        mainBuffer = floodFill(mainBuffer, new Point(137, 367), MyColor.PASSIONATE_BLUE, MyColor.ALASKAN_CRUISE);
         return mainBuffer;
     }
 
