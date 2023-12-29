@@ -319,6 +319,10 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(386, 308), MyColor.POST_BLUE, MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(383, 308), MyColor.ROSE_TURKISH_DELIGHT, MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(380, 308), MyColor.PRINCE_CHARMING, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(357, 305), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(293, 298), MyColor.POST_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(291, 298), MyColor.ROSE_TURKISH_DELIGHT, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(288, 298), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
 
         mainBuffer = floodFill(mainBuffer, new Point(450, 322), MyColor.CHINESE_NEW_YEAR, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(458, 324), MyColor.CREAM, MyColor.ANTARCTIC_BLUE);
@@ -353,6 +357,10 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(386, 308 + 3), MyColor.POST_BLUE, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(383, 308 + 3), MyColor.ROSE_TURKISH_DELIGHT, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(380, 308 + 3), MyColor.PRINCE_CHARMING, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(357, 305 + 3), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(293, 298 + 3), MyColor.POST_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(291, 298 + 3), MyColor.ROSE_TURKISH_DELIGHT, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(288, 298 + 3), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
                 
         // ราวรั้วล่าง
         mainBuffer = floodFill(mainBuffer, new Point(555, 396), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
