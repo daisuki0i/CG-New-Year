@@ -260,6 +260,64 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(168, 305), MyColor.CREAM, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(168, 299), MyColor.VIOLET_INDIGO, MyColor.ANTARCTIC_BLUE);
 
+        // สีรั้วที่โดนตึกดำทับ
+        mainBuffer = floodFill(mainBuffer, new Point(136, 317), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(144, 317), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+
+        mainBuffer = floodFill(mainBuffer, new Point(112, 341), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(112, 336), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(112, 328), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(112, 316), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(112, 306), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(112, 296), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(110, 294), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(119, 341), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(119, 335), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(119, 323), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(119, 315), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(119, 304), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(119, 295), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        
+        mainBuffer = floodFill(mainBuffer, new Point(86, 340), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(86, 337), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(86, 329), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(86, 317), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(86, 307), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(86, 297), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(86, 295), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(94, 340), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(94, 337), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(94, 329), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(94, 317), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(94, 307), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(94, 297), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(94, 295), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+
+        mainBuffer = floodFill(mainBuffer, new Point(67, 340), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(67, 338), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(67, 328), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(67, 318), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(67, 309), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(67, 298), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(67, 295), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(73, 340), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(73, 338), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(73, 328), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(73, 318), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(73, 309), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(73, 298), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(73, 295), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        
+        mainBuffer = floodFill(mainBuffer, new Point(47, 328), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(52, 328), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+
+        mainBuffer = floodFill(mainBuffer, new Point(25, 317), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(28, 317), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(33, 317), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+
+        mainBuffer = floodFill(mainBuffer, new Point(5, 316), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(14, 316), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+
         // ราวรั้วบน
         mainBuffer = floodFill(mainBuffer, new Point(5, 285), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(458, 320), MyColor.CREAM, MyColor.SASQUATCH_SOCKS);
@@ -313,7 +371,7 @@ public class NewYear extends JPanel {
         drawStar(mg);
         g.drawImage(mainBuffer, 0, 0, null);
 
-        plotDebug(g, new Point(267, 347), 2);
+        plotDebug(g, new Point(54, 328), 2);
     }
 
     // draw methods
