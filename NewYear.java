@@ -331,6 +331,11 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(210, 293), MyColor.VIOLET_INDIGO, MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(186, 290), MyColor.POST_BLUE, MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(162, 288), MyColor.AMOR, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(148, 288), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(111, 286), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(53, 284), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(48, 284), MyColor.PASSIONATE_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(16, 283), MyColor.LIMOGES, MyColor.SASQUATCH_SOCKS);
 
         mainBuffer = floodFill(mainBuffer, new Point(450, 322), MyColor.CHINESE_NEW_YEAR, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(458, 324), MyColor.CREAM, MyColor.ANTARCTIC_BLUE);
@@ -378,8 +383,11 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(191, 295), MyColor.PRINCE_CHARMING, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(186, 295), MyColor.VIOLET_INDIGO, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(161, 292), MyColor.POST_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(148, 288 + 3), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(111, 286 + 5), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(48, 284 + 5), MyColor.PASSIONATE_BLUE, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(16, 283 + 5), MyColor.LIMOGES, MyColor.ANTARCTIC_BLUE);
 
-                
         // ราวรั้วล่าง
         mainBuffer = floodFill(mainBuffer, new Point(555, 396), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(478, 382), MyColor.CHINESE_NEW_YEAR, MyColor.ANTARCTIC_BLUE);
