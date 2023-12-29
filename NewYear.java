@@ -393,11 +393,15 @@ public class NewYear extends JPanel {
         mainBuffer = floodFill(mainBuffer, new Point(478, 382), MyColor.CHINESE_NEW_YEAR, MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(427, 374), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.ANTARCTIC_BLUE);
         mainBuffer = floodFill(mainBuffer, new Point(449, 378), MyColor.CHINESE_NEW_YEAR, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(439, 374), MyColor.PRINCE_CHARMING, MyColor.ANTARCTIC_BLUE);
+        mainBuffer = floodFill(mainBuffer, new Point(423, 371), MyColor.POST_BLUE, MyColor.ANTARCTIC_BLUE);
 
         mainBuffer = floodFill(mainBuffer, new Point(5, 346), MyColor.BACKGROUND_GRADIENT_COLOR[6], MyColor.SASQUATCH_SOCKS);
         mainBuffer = floodFill(mainBuffer, new Point(591, 411), MyColor.ANTARCTIC_BLUE, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(439, 374 + 5), MyColor.PRINCE_CHARMING, MyColor.SASQUATCH_SOCKS);
+        mainBuffer = floodFill(mainBuffer, new Point(423, 371 + 5), MyColor.POST_BLUE, MyColor.SASQUATCH_SOCKS);
 
-        // mainBuffer = drawCar(mg, mainBuffer);
+        mainBuffer = drawCar(mg, mainBuffer);
 
         drawStar(mg);
         g.drawImage(mainBuffer, 0, 0, null);
