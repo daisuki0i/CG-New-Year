@@ -968,6 +968,15 @@ public class NewYear extends JPanel {
                 mainBuffer = floodFill(mainBuffer, new Point(316,355), MyColor.ROSE_TURKISH_DELIGHT , MyColor.CREAM);
                 mainBuffer = floodFill(mainBuffer, new Point(288,354), MyColor.LIMOGES, MyColor.CREAM);
 
+
+                mainBuffer = floodFill(mainBuffer, new Point(401,373), MyColor.CHINESE_NEW_YEAR , MyColor.CREAM);
+
+                mainBuffer = floodFill(mainBuffer, new Point(462,384), MyColor.CHINESE_NEW_YEAR , MyColor.LIGHT_PINK);
+                mainBuffer = floodFill(mainBuffer, new Point(456,383), MyColor.SASQUATCH_SOCKS , MyColor.LIGHT_PINK);
+                mainBuffer = floodFill(mainBuffer, new Point(459,380), MyColor.POST_BLUE , MyColor.LIGHT_PINK);
+                mainBuffer = floodFill(mainBuffer, new Point(451,376), MyColor.FRIJID_PINK , MyColor.LIGHT_PINK);
+                mainBuffer = floodFill(mainBuffer, new Point(461,381), MyColor.ANTARCTIC_BLUE , MyColor.LIGHT_PINK);
+
                 return mainBuffer;
         }
 
