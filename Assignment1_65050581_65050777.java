@@ -53,11 +53,11 @@ class MyColor extends Color {
     public static final Color LINE_CAR = Color.decode("#232E51");
 }
 
-public class NewYear extends JPanel {
+public class Assignment1_65050581_65050777 extends JPanel {
     final int LINE_WIDTH = 2;
 
     public static void main(String[] args) {
-        NewYear n = new NewYear();
+        Assignment1_65050581_65050777 n = new Assignment1_65050581_65050777();
         n.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 int x = e.getX();
@@ -68,7 +68,7 @@ public class NewYear extends JPanel {
 
         JFrame f = new JFrame();
         f.add(n);
-        f.setTitle("NewYear");
+        f.setTitle("Assignment1_65050581_65050777");
         f.setSize(600, 600);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
